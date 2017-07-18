@@ -1,0 +1,12 @@
+{
+  "development": {
+    "username": "expresser",
+    "password": "0G61Si@koIKjd03U",
+    "database": "expresser_dev",
+    "host": "165.227.1.186",
+    "dialect": "mysql"
+  },
+  "production": {
+    "useEnvVariables": true
+  }
+}

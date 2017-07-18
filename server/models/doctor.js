@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
         firstName: DataTypes.STRING,
         lastName: DataTypes.STRING,
         specialtyId: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             model: 'Specialty',
             key: 'id'
         }
