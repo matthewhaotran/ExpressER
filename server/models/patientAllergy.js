@@ -14,11 +14,11 @@ module.exports = function (sequelize, DataTypes) {
         }
     });
 
-    Patient.associate = function (models) {
+    PatientAllergy.associate = function (models) {
 
-        models.PatientAllergy.belongsTo(models.Allergy, {
-            as: 'allergy',
-            foreignKey: 'allergyId'
+        models.PatientAllergy.belongsTo(models.AllergyInfo, {
+            as: 'allergyInfo',
+            foreignKey: 'allergyInfoId'
         });
 
         models.PatientAllergy.belongsTo(models.Patient, {

@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     EmergencyContact.associate = function (models) {
-        models.Patient.belongsTo(models.PatientId, {
+        models.EmergencyContact.belongsTo(models.Patient, {
             as: 'patient',
             foreignKey: 'patientId'
         });
