@@ -6,8 +6,8 @@
 
         // Custom modules
         'app.core',
-        // 'app.patientInfo',
-         'app.confirmation',
+        'app.patientInfo',
+        'app.confirmation',
         // 'app.consent',
         // 'app.emergencyContact',
         'app.painScale',
@@ -31,6 +31,13 @@
             controller: 'SplashController as SplashCtrl',
             templateUrl: 'app/splash/splash.template.html'
         });
+
+        $stateProvider.state('patientInfo', {
+            url: '/patientInfo',
+            controller: 'PatientInfoController as PatientInfoCtrl',
+            templateUrl: 'app/patientInfo/patientInfo.template.html'
+        });
+    }
 
         $stateProvider.state('confirmation', {
             url: '/confirmation',
