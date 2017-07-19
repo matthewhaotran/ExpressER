@@ -13,7 +13,7 @@
         // 'app.painScale',
         'app.splash',
         // 'app.successFailure',
-        // 'app.symptom',
+         'app.symptom',
 
         // 3rd Party Modules
         "ui.router"
@@ -30,6 +30,12 @@
             url: '/splash',
             controller: 'SplashController as SplashCtrl',
             templateUrl: 'app/splash/splash.template.html'
+        });
+
+        $stateProvider.state('symptom', {
+            url: '/symptom',
+            controller: 'SymptomController as SymptomCtrl',
+            templateUrl: 'app/symptom/symptom.template.html'
         });
     }
 
