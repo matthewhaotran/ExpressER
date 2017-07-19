@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('app.confirmation', [
+    angular.module('app.success', [
         // Angular modules
 
         // Custom modules
