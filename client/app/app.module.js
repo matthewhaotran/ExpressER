@@ -6,11 +6,11 @@
 
         // Custom modules
         'app.core',
-        // 'app.patientInfo',
-        // 'app.confirmation',
+        'app.patientInfo',
+        'app.confirmation',
         // 'app.consent',
         // 'app.emergencyContact',
-        // 'app.painScale',
+        'app.painScale',
         'app.splash',
         // 'app.successFailure',
         // 'app.symptom',
@@ -39,4 +39,15 @@
         });
     }
 
+        $stateProvider.state('confirmation', {
+            url: '/confirmation',
+            controller: 'ConfirmationController as confirmCtrl',
+            templateUrl: 'app/confirmation/confirmation.template.html'
+
+        $stateProvider.state('painScale', {
+            url: '/painScale',
+            controller: 'PainScaleController as PainScaleCtrl',
+            templateUrl: 'app/painScale/painScale.template.html'
+        });
+    }
 })();
