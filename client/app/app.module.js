@@ -6,15 +6,19 @@
 
         // Custom modules
         'app.core',
-        // 'app.patientInfo',
-        // 'app.confirmation',
+        'app.consent',
+        'app.patientInfo',
+        'app.confirmation',
         // 'app.consent',
         // 'app.emergencyContact',
-        // 'app.painScale',
+        'app.painScale',
         'app.splash',
         'app.success',
         // 'app.symptom',
         'app.failure',
+        // 'app.successFailure',
+         'app.symptom',
+
         // 3rd Party Modules
         "ui.router"
     ]).config(appConfig);
@@ -43,6 +47,35 @@
             controller: 'FailureController as FailureCtrl',
             templateUrl: 'app/failure/failure.template.html'
         });
-    }
 
+        $stateProvider.state('symptom', {
+            url: '/symptom',
+            controller: 'SymptomController as SymptomCtrl',
+            templateUrl: 'app/symptom/symptom.template.html'
+        });
+
+        $stateProvider.state('consent', {
+            url: '/consent',
+            controller: 'ConsentController as ConsentCtrl',
+            templateUrl: 'app/consent/consent.template.html'
+        });
+      
+        $stateProvider.state('patientInfo', {
+            url: '/patientInfo',
+            controller: 'PatientInfoController as PatientInfoCtrl',
+            templateUrl: 'app/patientInfo/patientInfo.template.html'
+        });
+
+        $stateProvider.state('confirmation', {
+            url: '/confirmation',
+            controller: 'ConfirmationController as confirmCtrl',
+            templateUrl: 'app/confirmation/confirmation.template.html'
+        });
+      
+        $stateProvider.state('painScale', {
+            url: '/painScale',
+            controller: 'PainScaleController as PainScaleCtrl',
+            templateUrl: 'app/painScale/painScale.template.html'
+        });
+    }
 })();
