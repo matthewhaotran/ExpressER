@@ -21,24 +21,24 @@ module.exports = function (sequelize, DataTypes) {
     });
 
     Patient.associate = function (models) {
-        models.Patient.hasMany(models.patientAllergy, {
+        models.Patient.hasMany(models.PatientAllergy, {
             as: 'patientAllergies',
-            foreignKey: 'patientAllergyId'
+            foreignKey: 'patientId'
         });
 
-        models.Patient.hasMany(models.emergencyContact, {
+        models.Patient.hasMany(models.EmergencyContact, {
             as: 'emergencyContacts',
-            foreignKey: 'emergencyContactId'
+            foreignKey: 'patientId'
         });
 
-        models.Patient.hasMany(models.insurance, {
+        models.Patient.hasMany(models.Insurance, {
             as: 'insurances',
-            foreignKey: 'insuranceId'
+            foreignKey: 'patientId'
         });
 
-        models.Patient.hasMany(models.visit, {
+        models.Patient.hasMany(models.Visit, {
             as: 'visits',
-            foreignKey: 'visitId'
+            foreignKey: 'patientId'
         });
 
 

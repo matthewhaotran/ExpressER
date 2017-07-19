@@ -5,7 +5,7 @@ module.exports = function (sequelize, DataTypes) {
         firstName: DataTypes.STRING,
         lastName: DataTypes.STRING,
         specialtyId: {
-            type: DataTypes.INTERGER,
+            type: DataTypes.INTEGER,
             model: 'Specialty',
             key: 'id'
         }
@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
     Doctor.associate = function (models) {
         models.Doctor.hasMany(models.Visit, {
             as: 'visits',
-            foreignKey: 'visitId'
+            foreignKey: 'doctorId'
         });
 
         models.Doctor.belongsTo(models.Specialty, {

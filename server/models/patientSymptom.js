@@ -3,13 +3,13 @@ module.exports = function (sequelize, DataTypes) {
 
     let PatientSymptom = sequelize.define('PatientSymptom', {
         symptomId: {
-            type: DataType.INTEGER,
+            type: DataTypes.INTEGER,
             model: 'Symptom',
             key: 'id'
         },
         visitId: {
-            type: DataType.INTEGER,
-            modal: 'VisitInfo',
+            type: DataTypes.INTEGER,
+            model: 'Visit',
             key: 'id'
         }
     });
@@ -19,7 +19,7 @@ module.exports = function (sequelize, DataTypes) {
             as: 'symptom',
             foreignKey: 'symptomId'
         });
-        models.PatientSymptom.belongsTo(models.VisitInfo, {
+        models.PatientSymptom.belongsTo(models.Visit, {
             as: 'visit',
             foreignKey: 'visitId'
         });

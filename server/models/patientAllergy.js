@@ -7,18 +7,18 @@ module.exports = function (sequelize, DataTypes) {
             model: 'Patient',
             key: 'id'
         },
-        allergyId: {
+        allergyInfoId: {
             type: DataTypes.INTEGER,
             model: 'Allergy',
             key: 'id'
         }
     });
 
-    Patient.associate = function (models) {
+    PatientAllergy.associate = function (models) {
 
-        models.PatientAllergy.belongsTo(models.Allergy, {
-            as: 'allergy',
-            foreignKey: 'allergyId'
+        models.PatientAllergy.belongsTo(models.AllergyInfo, {
+            as: 'allergyInfo',
+            foreignKey: 'allergyInfoId'
         });
 
         models.PatientAllergy.belongsTo(models.Patient, {
