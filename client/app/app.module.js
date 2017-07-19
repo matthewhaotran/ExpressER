@@ -10,7 +10,7 @@
         // 'app.confirmation',
         // 'app.consent',
         // 'app.emergencyContact',
-        // 'app.painScale',
+        'app.painScale',
         'app.splash',
         // 'app.successFailure',
         // 'app.symptom',
@@ -31,6 +31,10 @@
             controller: 'SplashController as SplashCtrl',
             templateUrl: 'app/splash/splash.template.html'
         });
+        $stateProvider.state('painScale', {
+            url: '/painScale',
+            controller: 'PainScaleController as PainScaleCtrl',
+            templateUrl: 'app/painScale/painScale.template.html'
+        });
     }
-
 })();
