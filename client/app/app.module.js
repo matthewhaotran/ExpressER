@@ -13,8 +13,6 @@
         'app.painScale',
         'app.splash',
         'app.success',
-        'app.failure',
-        // 'app.successFailure',
          'app.symptom',
 
         // 3rd Party Modules
@@ -42,31 +40,25 @@
 
         $stateProvider.state('success', {
             url: '/success',
-            controller: 'SuccessController as SuccessCtrl',
+            controller: 'SuccessController as successCtrl',
             templateUrl: 'app/success/success.template.html'
-        });
-
-        $stateProvider.state('failure', {
-            url: '/failure',
-            controller: 'FailureController as FailureCtrl',
-            templateUrl: 'app/failure/failure.template.html'
         });
 
         $stateProvider.state('symptom', {
             url: '/symptom',
-            controller: 'SymptomController as SymptomCtrl',
+            controller: 'SymptomController as symptomCtrl',
             templateUrl: 'app/symptom/symptom.template.html'
         });
 
         $stateProvider.state('consent', {
             url: '/consent',
-            controller: 'ConsentController as ConsentCtrl',
+            controller: 'ConsentController as consentCtrl',
             templateUrl: 'app/consent/consent.template.html'
         });
       
-        $stateProvider.state('patientInfo', {
-            url: '/patientInfo',
-            controller: 'PatientInfoController as PatientInfoCtrl',
+        $stateProvider.state('patient', {
+            url: '/patient',
+            controller: 'PatientInfoController as patientInfoCtrl',
             templateUrl: 'app/patientInfo/patientInfo.template.html'
         });
 
@@ -78,7 +70,7 @@
       
         $stateProvider.state('painScale', {
             url: '/painScale',
-            controller: 'PainScaleController as PainScaleCtrl',
+            controller: 'PainScaleController as painScaleCtrl',
             templateUrl: 'app/painScale/painScale.template.html'
         });
     }

@@ -1,4 +1,4 @@
-(function() {
+(function () {
     'use strict';
 
     angular
@@ -6,14 +6,59 @@
         .factory('patientFactory', patientFactory);
 
     patientFactory.$inject = ['$http'];
+
     function patientFactory($http) {
         var service = {
-            exposedFn:exposedFn
+            getAll: getAll,
+            getById: getById,
+            create: create,
+            update: update,
+            remove: remove
         };
-        
+
         return service;
 
-        ////////////////
-        function exposedFn() { }
+        function getAll() {
+            return $http
+                .get('/api/patient')
+                .then(function (response) {
+                    return response.data
+                });
+        }
+
+        function getById(id) {
+            return $http
+                .get('/api/patient/' + id)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+
+        function create(patient) {
+            return $http
+                .post('/api/patient', patient)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+
+        function update(patient) {
+            return $http
+                .put('/api/patient/' + patient.id, patient)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+
+        function remove(patient) {
+            return $http
+                .delete('/api/patient/' + patient.id)
+                .then(function (response) {
+                    return response.data;
+                })
+
+
+        }
+
     }
 })();

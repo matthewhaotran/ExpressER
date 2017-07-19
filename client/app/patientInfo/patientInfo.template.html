@@ -1,1 +1,3 @@
-<h1>This is the PatientInfo Template!! YAY Me!!</h1>
+    <pre>{{patientInfoCtrl | json}}</pre>
+<input type="text" ng-model="patientInfoCtrl.patient.firstName">
+<button ng-click="patientInfoCtrl.createPatient(patientInfoCtrl.patient)">Submit</button>
