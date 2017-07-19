@@ -31,6 +31,12 @@
             controller: 'SplashController as SplashCtrl',
             templateUrl: 'app/splash/splash.template.html'
         });
+
+        $stateProvider.state('patientInfo', {
+            url: '/patientInfo',
+            controller: 'PatientInfoController as PatientInfoCtrl',
+            templateUrl: 'app/patientInfo/patientInfo.template.html'
+        });
     }
 
 })();
