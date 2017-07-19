@@ -12,9 +12,9 @@
         // 'app.emergencyContact',
         // 'app.painScale',
         'app.splash',
-        // 'app.successFailure',
+        'app.success',
         // 'app.symptom',
-
+        'app.failure',
         // 3rd Party Modules
         "ui.router"
     ]).config(appConfig);
@@ -30,6 +30,18 @@
             url: '/splash',
             controller: 'SplashController as SplashCtrl',
             templateUrl: 'app/splash/splash.template.html'
+        });
+
+        $stateProvider.state('success', {
+            url: '/success',
+            controller: 'SuccessController as SuccessCtrl',
+            templateUrl: 'app/success/success.template.html'
+        });
+
+        $stateProvider.state('failure', {
+            url: '/failure',
+            controller: 'FailureController as FailureCtrl',
+            templateUrl: 'app/failure/failure.template.html'
         });
     }
 
