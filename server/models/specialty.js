@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
     Specialty.associate = function (models) {
         models.Specialty.hasMany(models.Doctor, {
             as: 'doctors',
-            foreignKey: 'doctorId'
+            foreignKey: 'specialtyId'
         });
     };
     return Specialty;

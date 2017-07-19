@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
             model: 'Patient',
             key: 'id'
         },
-        allergyId: {
+        allergyInfoId: {
             type: DataTypes.INTEGER,
             model: 'Allergy',
             key: 'id'

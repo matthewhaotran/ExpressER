@@ -9,7 +9,7 @@ module.exports = function (sequelize, DataTypes) {
     AllergyInfo.associate = function (models) {
         models.AllergyInfo.hasMany(models.PatientAllergy, {
             as: 'patientAllergies',
-            foreignKey: 'patientAllergyId'
+            foreignKey: 'allergyInfoId'
         });
 
         
