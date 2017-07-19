@@ -15,7 +15,7 @@ module.exports = function (sequelize, DataTypes) {
     Doctor.associate = function (models) {
         models.Doctor.hasMany(models.Visit, {
             as: 'visits',
-            foreignKey: 'visitId'
+            foreignKey: 'doctorId'
         });
 
         models.Doctor.belongsTo(models.Specialty, {

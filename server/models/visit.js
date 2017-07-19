@@ -20,7 +20,7 @@ module.exports = function (sequelize, DataTypes) {
     Visit.associate = function (models) {
         models.Visit.hasMany(models.PatientSymptom, {
             as: 'patientSymptoms',
-            foreignKey: 'patientSymptomId'
+            foreignKey: 'visitId'
         });
         models.Visit.belongsTo(models.Patient, {
             as: 'patient',
