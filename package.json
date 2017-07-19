@@ -1,8 +1,8 @@
 {
   "name": "ExpressER",
   "scripts": {
-		"start": "node server.js",
-		"test": "cross-env NODE_ENV=test mocha ./server/**/*.spec.js"
+    "start": "node server.js",
+    "test": "cross-env NODE_ENV=test mocha ./server/**/*.spec.js"
   },
   "dependencies": {
     "angular": "^1.6.5",

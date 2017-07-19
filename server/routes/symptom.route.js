@@ -21,7 +21,6 @@ router.get('/:id', function(request,response){
 });
 
 router.post('/', function(request, response){
-  console.log(request);
   const symptom = db.Symptom.build(request.body);
 
   symptom.save().then(function(newsymptom){

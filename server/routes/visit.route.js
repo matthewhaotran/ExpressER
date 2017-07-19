@@ -21,12 +21,11 @@ router.get('/:id', function(request,response){
 });
 
 router.post('/', function(request, response){
-  console.log(request);
   const visit = db.Visit.build(request.body);
 
   visit.save().then(function(newvisit){
 
-    response.send(newvisit);
+    response.status(201).send(newvisit);
   });
 });
 
@@ -38,7 +37,7 @@ router.put('/:id', function(request, response){
       if (visit === null){
       response.sendStatus(404);
     } else{
-      response.json(visit);
+      response.sendStatus(204);
     }
    });
   });

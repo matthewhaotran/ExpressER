@@ -21,7 +21,6 @@ router.get('/:id', function(request,response){
 });
 
 router.post('/', function(request, response){
-  console.log(request);
   const allergyInfo = db.AllergyInfo.build(request.body);
 
   allergyInfo.save().then(function(newallergyInfo){
