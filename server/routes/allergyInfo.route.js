@@ -25,7 +25,7 @@ router.post('/', function(request, response){
 
   allergyInfo.save().then(function(newallergyInfo){
 
-    response.send(newallergyInfo);
+    response.status(201).send(newallergyInfo);
   });
 });
 
@@ -37,7 +37,7 @@ router.put('/:id', function(request, response){
       if (allergyInfo === null){
       response.sendStatus(404);
     } else{
-      response.json(allergyInfo);
+      response.status(204).json(allergyInfo);
     }
    });
   });
