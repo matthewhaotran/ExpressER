@@ -25,7 +25,7 @@ router.post('/', function(request, response){
 
   symptom.save().then(function(newsymptom){
 
-    response.send(newsymptom);
+    response.status(201).send(newsymptom);
   });
 });
 
@@ -37,7 +37,7 @@ router.put('/:id', function(request, response){
       if (symptom === null){
       response.sendStatus(404);
     } else{
-      response.json(symptom);
+  response.status(204).json(symptom);
     }
    });
   });
