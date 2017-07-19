@@ -8,7 +8,7 @@
         'app.core',
         // 'app.patientInfo',
         // 'app.confirmation',
-        // 'app.consent',
+        'app.consent',
         // 'app.emergencyContact',
         // 'app.painScale',
         'app.splash',
@@ -30,6 +30,12 @@
             url: '/splash',
             controller: 'SplashController as SplashCtrl',
             templateUrl: 'app/splash/splash.template.html'
+        });
+
+        $stateProvider.state('consent', {
+            url: '/consent',
+            controller: 'ConsentController as ConsentCtrl',
+            templateUrl: 'app/consent/consent.template.html'
         });
     }
 
