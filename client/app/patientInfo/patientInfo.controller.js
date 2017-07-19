@@ -9,12 +9,22 @@
 
     function PatientInfoController($stateParams, $state, patientFactory) {
         var vm = this;
-
+        vm.createPatient = createPatient;
 
         activate();
 
-        ////////////////
+        
 
         function activate() {}
+
+        function createPatient(patient) {
+            patientFactory
+                .create(patient)
+                .then(function(patient) {
+                    vm.patient = patient;
+                    alert('patient added!');
+                });
+        }
+
     }
 })();
