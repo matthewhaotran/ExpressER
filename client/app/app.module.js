@@ -9,7 +9,7 @@
         // 'app.patientInfo',
         // 'app.confirmation',
         // 'app.consent',
-        // 'app.emergencyContact',
+        'app.emergencyContact',
         // 'app.painScale',
         'app.splash',
         // 'app.successFailure',
@@ -30,6 +30,12 @@
             url: '/splash',
             controller: 'SplashController as SplashCtrl',
             templateUrl: 'app/splash/splash.template.html'
+        });
+        
+         $stateProvider.state('emergencyContact', {
+            url: '/emergencyContact',
+            controller: 'EmergencyContactController as EmergencyContactCtrl',
+            templateUrl: 'app/emergencyContact/emergencyContact.template.html'
         });
     }
 
