@@ -6,11 +6,12 @@
 
         // Custom modules
         'app.core',
-        // 'app.patientInfo',
-        // 'app.confirmation',
         'app.consent',
+        'app.patientInfo',
+        'app.confirmation',
+        // 'app.consent',
         // 'app.emergencyContact',
-        // 'app.painScale',
+        'app.painScale',
         'app.splash',
         // 'app.successFailure',
         // 'app.symptom',
@@ -37,6 +38,23 @@
             controller: 'ConsentController as ConsentCtrl',
             templateUrl: 'app/consent/consent.template.html'
         });
-    }
+      
+        $stateProvider.state('patientInfo', {
+            url: '/patientInfo',
+            controller: 'PatientInfoController as PatientInfoCtrl',
+            templateUrl: 'app/patientInfo/patientInfo.template.html'
+        });
 
+        $stateProvider.state('confirmation', {
+            url: '/confirmation',
+            controller: 'ConfirmationController as confirmCtrl',
+            templateUrl: 'app/confirmation/confirmation.template.html'
+        });
+      
+        $stateProvider.state('painScale', {
+            url: '/painScale',
+            controller: 'PainScaleController as PainScaleCtrl',
+            templateUrl: 'app/painScale/painScale.template.html'
+        });
+    }
 })();
