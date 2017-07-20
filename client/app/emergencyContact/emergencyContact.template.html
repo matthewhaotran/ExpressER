@@ -1,1 +1,49 @@
-<h1>This is the EmergencyContact page!</h2>
+<div layout="row" layout-align="center center">
+    <h3 class="md-headline" layout-align="center center">Enter Emergency Contacts</h3>
+</div>
+
+<div layout="column" layout-padding ng-cloak>
+
+    <br/>
+
+    <md-content class="md-no-momentum">
+        <md-input-container class="md-icon-float md-block">
+            <label>Contact First Name</label>
+           <ng-md-icon icon="send">
+           </ng-md-icon>
+            <input ng-model="emergencyContactCtrl.firstName" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-icon-float md-block">
+            <label>Contact Last Name</label>
+            <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+            <input ng-model="emergencyContactCtrl.lastName" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-icon-float md-block">
+            <label>Contact Phone Number</label>
+            <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+            <input ng-model="emergencyContactCtrl.mobilePhone" type="text">
+        </md-input-container>
+
+        <md-input-container class="md-icon-float md-block">
+            <label>Relationship to Contact</label>
+            <md-icon md-svg-src="img/icons/ic_person_24px.svg" class="name"></md-icon>
+            <input ng-model="emergencyContactCtrl.relationship" type="text">
+        </md-input-container>
+
+    </md-content>
+
+    <div layout="row" layout-align="center center">
+        <div>
+            <md-button class="md-raised md-primary">Back to Patient Info</md-button>
+        </div>
+        <div>
+            <md-button class="md-raised">Add Additional Emergency Contact</md-button>
+        </div>
+        <div>
+            <md-button class="md-raised md-primary">Next To Select Symptoms</md-button>
+        </div>
+    </div>
+
+</div>

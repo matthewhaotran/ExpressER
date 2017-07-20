@@ -1,11 +1,16 @@
-<h1 class="text-center">ExpressER</h1>
 <p class="lead text-center">Welcome to ExpressER! Let's get started.</p>
-
-<div class="row">
-  <div class="col-xs-6 text-center">
-    <button ui-sref="wizard.patient" type="button" class="btn btn-primary btn-lg">New Customer</button>
-  </div>
-  <div class="col-xs-6 text-center">
-    <button type="button" class="btn btn-primary btn-lg">Existing Customer</button>
-  </div>
+<div class="padded" md-whiteframe="18" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
+    <span>
+        <img src="/images/EspressERLogo.jpg" alt="Our Logo" style="width : 400px">
+    </span>
+</div>
+<div class="padded" md-whiteframe="18" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
+    <span>
+        <md-button class="md-raised md-primary">Existing Patient</md-button>
+    </span>
+</div>
+<div class="padded" md-whiteframe="18" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
+    <span>
+        <md-button class="md-raised md-warn" ui-sref="wizard.patient">New Patient</md-button>
+    </span>
 </div>
