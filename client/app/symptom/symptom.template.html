@@ -1,6 +1,74 @@
-<!-- <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak> -->
-     <md-whiteframe class="md-whiteframe-24dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
-    <span class="md-display-3">Please select your Symptom(s):</span>
-   </md-whiteframe> 
+<md-toolbar>
+    <div class="md-toolbar-tools">
+        <md-button aria-label="Go Back">
+            Go Back
+        </md-button>
+        <br>
 
-<!-- </div> -->
+        <md-truncate style="position: absolute; left: 90px; right: 170px; top: 13px; bottom: 13px;">Please Select Your Symptoms</md-truncate>
+
+        <span flex></span>
+        <md-button class="md-raised" aria-label="Learn More">
+            Skip Foward
+        </md-button>
+        <md-button class="md-raised" aria-label="Learn More">
+            Learn More
+        </md-button>
+        <md-button class="md-fab md-mini" aria-label="Favorite">
+            <md-icon md-svg-icon="img/icons/favorite.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+<br>
+
+
+</style>
+
+
+
+
+
+<div layout="column" layout-align="center start" layout-padding flex>
+    <p class="inset">
+        This is just some mombo jombo about Express Er's Symptoms Information .
+    </p>
+    <div flex-gt-sm="50" flex>
+
+   <md-content>
+        <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
+            Cancer
+        </md-button>
+        <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()">
+            Fever
+        </md-button>
+        <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
+            Fracture
+        </md-button>
+        <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()">
+            Strokes
+        </md-button>
+
+    </md-content>
+   <md-content>
+        
+        <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()">
+            Headache
+        </md-button>
+    
+        <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
+            Abdominal Pain
+        </md-button>
+        <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()">
+            Rash
+        </md-button>
+   
+        <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
+            Chest Pain
+        </md-button>
+        
+     </md-content>
+        
+    </div>
+
+</div>
+
