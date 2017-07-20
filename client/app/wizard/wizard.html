@@ -12,12 +12,6 @@
   <div ui-view></div>
 </div>
 <div class="well clearfix">
-  <button ng-click="wizardCtrl.previous()" class="btn btn-primary">
-    <span class="glyphicon glyphicon-arrow-left"></span> 
-    Previous
-  </button>
-  <button ng-click="wizardCtrl.next()" class="btn btn-primary pull-right">
-    Next
-    <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-   </button>
+  <md-button ng-click="wizardCtrl.previous()" class="md-raised md-warn"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous</md-button>
+  <md-button ng-click="wizardCtrl.next()" class="md-raised md-primary">Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </md-button>
 </div>

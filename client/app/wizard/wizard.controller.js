@@ -22,6 +22,26 @@
                 done: false
             },
             {
+                state: 'wizard.symptom',
+                name: 'Symptom',
+                done: false
+            },
+            {
+                state: 'wizard.painScale',
+                name: 'Pain Scale',
+                done: false
+            },
+            {
+                state: 'wizard.consent',
+                name: 'Consent',
+                done: false
+            },
+            {
+                state: 'wizard.confirmation',
+                name: 'Confirmation',
+                done: false
+            },
+            {
                 state: 'wizard.success',
                 name: 'Confirm',
                 done: false
