@@ -26,6 +26,7 @@ gulp.task('build:js', () =>
     'node_modules/angular-aria/angular-aria.js',
     'node_modules/angular-animate/angular-animate.js',
     'node_modules/angular-material/angular-material.js',
+    'node_modules/angular-material-icons/angular-material-icons.js',
     'node_modules/angular-ui-router/release/angular-ui-router.js',
     'client/**/*.module.js',
     'client/**/*.js'
