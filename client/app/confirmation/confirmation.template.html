@@ -6,14 +6,49 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="css/style.css" rel="stylesheet">
     </head>
-
-    
-        <div class="jumbotron">
-            <h1>Confirmation</h1>
-        
-    </div>
-
     <body>
-    
+      
+  <md-toolbar class="sm-indigo">
+    <div class="md-toolbar-tools">
+      <h2 class="md-flex">Please Confirm Information:</h2>
+    </div>
+  </md-toolbar>
+  <md-content>
+      <br>
+      <div class="md-list-item-text">
+      <p>First Name:</p>
+      <p>Middle Name:</p>
+      <p>Last Name: </p>
+      <p>Social Security Number:</p>
+      <p>Date Of Birth:</p>
+      <p>Address1:</p>
+      <p>Address2:</p>
+      <p>City:</p>
+      <p>State:</p>
+      <p>ZIP:</p>
+      <p>Mobile Phone:</p>
+      <p>Home Phone:</p>
+      <p>Work Phone:</p>
+       </div>
+      <br>
+      <md-divider ng-if="!$last"></md-divider>
+      <br>
+    <p>Emergency Contact:</p>
+    <p>Address:</p>
+    <p>Phone Number:</p>
+    <p>Relationship To Patient:</p>
+<br>
+    <md-divider ng-if="!$last"></md-divider>
+    <br>
+    <p>Pain Scale:</p>
+</md-content>
+
+        <md-content>
+    <section layout="row" layout-sm="row" layout-align="center center" layout-wrap>
+      <md-button class="md-raised md-primary">Confirm</md-button>
+      <md-button class="md-raised md-gray">Edit</md-button>
+      <md-button class="md-raised md-warn">Cancel</md-button>
+    </section>
+</md-content>
     </body>
 </html>
