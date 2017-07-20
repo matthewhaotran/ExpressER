@@ -3,7 +3,7 @@
 
     angular.module('app', [
         // Angular modules
-
+        'ngMaterial',
         // Custom modules
         'app.core',
         'app.consent',

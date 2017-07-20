@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" href="css/bundle.min.css">
-  </head>
-  <body>
-    <div class="container">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/bundle.min.css">
+</head>
+
+<body>
+  <md-nav-bar md-selected-nav-item="currentNavItem">
+    <md-nav-item md-nav-click="goto('page1')" name="page1">
+      Splash
+    </md-nav-item>
+    <md-nav-item md-nav-href="#page2" name="page3">Patient Info</md-nav-item>
+    <md-nav-item md-nav-sref="page3" name="page2">Emergency Contacts</md-nav-item>
+    <md-nav-item md-nav-sref="app.page4" sref-opts="{reload: true, notify: true}" name="page4">
+      Page Four
+    </md-nav-item>
+  </md-nav-bar>
+
+  <div class="container">
     <div class='jumbotron'>
       <h1>Matt Loves JumboTron!! </h1>
       <div ui-view></div>
     </div>
+
+    <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;" ng-cloak>
+      <md-whiteframe class="md-whiteframe-24dp" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" layout layout-align="center center">
+        <span>Casey hates bacon so much it hurts</span>
+      </md-whiteframe>
+    </div>
+
+
   </div>
-    <script src="js/bundle.min.js"></script>
-  </body>
+  <script src="js/bundle.min.js"></script>
+</body>
+
 </html>
