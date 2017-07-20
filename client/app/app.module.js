@@ -4,6 +4,7 @@
     angular.module('app', [
         // Angular modules
         'ngMaterial',
+        'ngMdIcons',
         // Custom modules
         'app.core',
         'app.consent',
