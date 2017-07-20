@@ -7,6 +7,12 @@ gulp.task('copy:fonts', () =>
   .pipe(gulp.dest('dist/fonts'))
 );
 
+gulp.task('copy:images', () =>
+  gulp
+  .src('client/app/images/*')
+  .pipe(gulp.dest('dist/images'))
+);
+
 gulp.task('copy:html', () =>
   gulp
   .src('client/**/*.html')
@@ -48,6 +54,7 @@ gulp.task('watch', () => {
   gulp.watch('./client/**/*.css', ['build:css']);
   gulp.watch('./client/**/*.js', ['build:js']);
   gulp.watch('./client/**/*.html', ['copy:html']);
+  gulp.watch('./client/images/*', ['copy:images']);
 });
 
 gulp.task('serve', () =>
@@ -59,4 +66,4 @@ gulp.task('serve', () =>
   })
 );
 
-gulp.task('default', ['copy:fonts', 'copy:html', 'build:js', 'build:css', 'watch', 'serve']);
+gulp.task('default', ['copy:fonts', 'copy:images', 'copy:html', 'build:js', 'build:css', 'watch', 'serve']);
