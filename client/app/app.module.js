@@ -13,7 +13,7 @@
         'app.painScale',
         'app.splash',
         'app.success',
-         'app.symptom',
+        'app.symptom',
 
         // 3rd Party Modules
         "ui.router"
@@ -31,8 +31,8 @@
             controller: 'SplashController as SplashCtrl',
             templateUrl: 'app/splash/splash.template.html'
         });
-        
-         $stateProvider.state('emergencyContact', {
+
+        $stateProvider.state('emergencyContact', {
             url: '/emergencyContact',
             controller: 'EmergencyContactController as EmergencyContactCtrl',
             templateUrl: 'app/emergencyContact/emergencyContact.template.html'
@@ -55,7 +55,7 @@
             controller: 'ConsentController as consentCtrl',
             templateUrl: 'app/consent/consent.template.html'
         });
-      
+
         $stateProvider.state('patient', {
             url: '/patient',
             controller: 'PatientInfoController as patientInfoCtrl',
@@ -67,7 +67,7 @@
             controller: 'ConfirmationController as confirmCtrl',
             templateUrl: 'app/confirmation/confirmation.template.html'
         });
-      
+
         $stateProvider.state('painScale', {
             url: '/painScale',
             controller: 'PainScaleController as painScaleCtrl',
