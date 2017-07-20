@@ -4,28 +4,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  
   <link rel="stylesheet" href="css/bundle.min.css">
 </head>
 
 <body>
-  <md-nav-bar md-selected-nav-item="currentNavItem">
-    <md-nav-item md-nav-click="goto('page1')" name="page1">
-      Splash
-    </md-nav-item>
-    <md-nav-item md-nav-href="#page2" name="page3">Patient Info</md-nav-item>
-    <md-nav-item md-nav-sref="page3" name="page2">Emergency Contacts</md-nav-item>
-    <md-nav-item md-nav-sref="app.page4" sref-opts="{reload: true, notify: true}" name="page4">
-      Page Four
-    </md-nav-item>
-  </md-nav-bar>
 
-      <h1 layout-align="center center">Express ER </h1>
-
+  <div class="container">
     <div ui-view></div>
-
   </div>
+  
   <script src="js/bundle.min.js"></script>
+
 </body>
 
 </html>
