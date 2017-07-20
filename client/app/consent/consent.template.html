@@ -1,1 +1,48 @@
-<h1>This is the consent form screen</h1>
+<div ng-controller="ConsentController" overflow="auto" ng-cloak>
+    <md-toolbar class="md-primary">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex">Consent for Care</h2>
+        </div>
+    </md-toolbar>
+
+    <md-content layout-padding>
+        <p>Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam.
+            Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur
+            reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem
+            aliquam ne.</p>
+
+        <p>Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam.
+            Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur
+            reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem
+            aliquam ne.</p>
+
+        <p>Lorem ipsum dolor sit amet, ne quod novum mei. Sea omnium invenire mediocrem at, in lobortis conclusionemque nam.
+            Ne deleniti appetere reprimique pro, inani labitur disputationi te sed. At vix sale omnesque, id pro labitur
+            reformidans accommodare, cum labores honestatis eu. Nec quem lucilius in, eam praesent reformidans no. Sed laudem
+            aliquam ne.</p>
+
+    </md-content>
+
+
+    <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn md-align-top-left"
+        flex>
+        {{ data.cb2 }} <br/>
+        <span class="ipsum">
+              By checking this box you allow us to perform......
+        </span>
+        <br/>
+    </md-checkbox>
+
+    
+        <section layout-align="center center" layout-wrap>
+            <md-button class="md-fab md-hue-2">
+                <i class="fa fa-backward" aria-hidden="true"></i>
+            </md-button>
+
+            <md-button class="md-fab md-primary">
+                <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+            </md-button>
+        </section>
+    
+
+</div>
