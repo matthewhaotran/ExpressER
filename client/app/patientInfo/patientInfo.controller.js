@@ -9,22 +9,36 @@
 
     function PatientInfoController($stateParams, $state, patientFactory) {
         var vm = this;
-        vm.createPatient = createPatient;
 
-        activate();
+        vm.save = save;
+
+        //activate();
 
         
 
-        function activate() {}
+        //function activate() {}
 
-        function createPatient(patient) {
-            patientFactory
-                .create(patient)
-                .then(function(patient) {
-                    vm.patient = patient;
-                    alert('patient added!');
+        function save(patient){
+            console.log(patient);
+            if(patient.id){
+                patientFactory
+                .update(patient)
+                .then(function(){
+                    alert('patient Updated!');
+                   // $state.go('patient-grid');
                 });
+            } else {
+                patientFactory
+                .create(patient)
+                .then(function(){
+                    alert('patient Created!');
+                    //$state.go('patient-grid');
+                });
+             }
+            
         }
 
     }
 })();
+
+
