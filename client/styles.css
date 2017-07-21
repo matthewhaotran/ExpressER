@@ -3,6 +3,10 @@ body {
 }
 .button {
   margin-top: 2em;
-  box-shadow: 10px 10px 5px grey;
+  /* text-align: center; */
+}
+
+.input {
+  margin: 1em 1em;
 }
 
