@@ -4,45 +4,22 @@
 
             <div flex="100" flex-gt-sm="50" layout="column">
                 <div>
-                    <!--
-          In IE, we cannot apply flex directly to <fieldset>
-          @see https://github.com/philipwalton/flexbugs#9-some-html-elements-cant-be-flex-containers
-        -->
                     <fieldset class="standard">
-                        <legend>Using &lt;md-checkbox&gt; with &lt;ng-checked&gt; </legend>
+                        <legend>Please Select Your Symptoms</legend>
                         <div layout="row" layout-wrap flex>
-                            <div flex="50" ng-repeat="item in symptomCtrl.items">
-                                <md-checkbox ng-checked="symptomCtrl.exists(symptomCtrl.item, symptomCtrl.selected)" ng-click="symptomCtrl.toggle(symptomCtrl.item, symptomCtrl.selected)">
-                                    {{ item }} <span ng-if="symptomCtrl.exists(symptomCtrl.item, symptomCtrl.selected)">selected</span>
+                            <div flex="50" ng-repeat="symptom in symptomCtrl.symptoms">
+                                <md-checkbox ng-checked="symptomCtrl.exists(symptom, symptomCtrl.selected)" ng-click="symptomCtrl.toggle(symptom, symptomCtrl.selected)">
+                                    {{ symptom.description }} <span ng-if="symptomCtrl.exists(symptom, symptomCtrl.selected)">selected</span>
                                 </md-checkbox>
                             </div>
                         </div>
                     </fieldset>
                 </div>
             </div>
-
-            <div flex="100" flex-gt-sm="50" layout="column">
-                <div>
-                    <fieldset class="standard">
-                        <legend>Using &lt;input type="checkbox"&gt;</legend>
-                        <div layout="row" layout-wrap flex>
-                            <div ng-repeat="item in symptomCtrl.items" class="standard" flex="50">
-                                <label>
-                <input type="checkbox" ng-checked="symptomCtrl.exists(symptomCtrl.item, symptomCtrl.selected)"
-                       ng-click="symptomCtrl.toggle(symptomCtrl.item, symptomCtrl.selected)"/>
-                {{item }}
-              </label>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
-
-            <div flex="100">
-                <h2 class="md-title">Selected Items</h2>
-                <code style="display: block; padding: 8px;">{{symptomCtrl.selected | json}}</code>
-            </div>
         </div>
-
     </div>
+</div>
+<div flex="100">
+    <h2 class="md-title">Selected Symptoms</h2>
+    <code style="display: block; padding: 8px;">{{symptomCtrl.selected}}</code>
 </div>
