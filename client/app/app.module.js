@@ -42,8 +42,8 @@
         
          $stateProvider.state('wizard.emergencyContact', {
 
-            url: '/emergencyContact',
-            controller: 'EmergencyContactController as EmergencyContactCtrl',
+            url: '/emergencyContact?id',
+            controller: 'EmergencyContactController as emergencyContactCtrl',
             templateUrl: 'app/emergencyContact/emergencyContact.template.html'
         });
 
@@ -54,13 +54,13 @@
         });
 
         $stateProvider.state('wizard.symptom', {
-            url: '/symptom',
+            url: '/symptom?id',
             controller: 'SymptomController as symptomCtrl',
             templateUrl: 'app/symptom/symptom.template.html'
         });
 
         $stateProvider.state('wizard.consent', {
-            url: '/consent',
+            url: '/consent?id',
             controller: 'ConsentController as consentCtrl',
             templateUrl: 'app/consent/consent.template.html'
         });
@@ -82,7 +82,7 @@
       
         $stateProvider.state('wizard.painScale', {
 
-            url: '/painScale',
+            url: '/painScale?id',
             controller: 'PainScaleController as painScaleCtrl',
             templateUrl: 'app/painScale/painScale.template.html'
         });

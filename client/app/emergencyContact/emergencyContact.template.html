@@ -79,7 +79,7 @@
             <md-input-container class="md-icon-float md-block">
                 <label>Contact First Name</label>
                 <md-icon class="name"></md-icon>
-                <input ng-model="emergencyContactCtrl.firstName" type="text">
+                <input ng-model="emergencyContactCtrl.patient.firstName" type="text">
             </md-input-container>
 
             <md-input-container class="md-icon-float md-block">
@@ -103,6 +103,8 @@
         </md-content>
 
     </div>
+    
+    {{emergencyContactCtrl.patient.firstName}}
 
 </div>
-<pre>{{emergencyContactCtrl.contact}}</pre>
+<pre>{{emergencyContactCtrl | json}}</pre>
