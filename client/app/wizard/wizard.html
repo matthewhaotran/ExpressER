@@ -1,17 +1,33 @@
 <a ui-sref="splash">
-  <small ui-sref="splash"><span class="glyphicon glyphicon-arrow-left"></span> Cancel</small>
+  <strong><span class="glyphicon glyphicon-arrow-left"></span> Cancel</strong>
 </a>
 
+
 <div class="progress">
-  <div class="progress-bar progress-bar-success">
+  <div class="progress-bar progress-bar-success" style="width: {{wizardCtrl.progress()}}%;">
 
   </div>
+
+
+</div>
 </div>
 
 <div class="well">
   <div ui-view></div>
 </div>
-<div class="well clearfix">
-  <md-button ng-click="wizardCtrl.previous()" class="md-raised md-warn"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous</md-button>
-  <md-button ng-click="wizardCtrl.next()" class="md-raised md-primary">Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </md-button>
-</div>
+
+  
+    <div 
+    style="position: fixed; 
+    width: 718px;
+    height: 80px;
+    bottom:0px;
+    right: 25%;
+    left: 50%;
+    margin-left: -359px"> 
+    <div class="well clearfix">
+      <md-button ng-click="wizardCtrl.previous()" class="md-raised md-warn"><span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span> Previous</md-button>
+      <md-button ng-click="wizardCtrl.next()" class="md-raised md-primary pull-right">Next <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> </md-button>
+    </div>
+   </div> 
+  
