@@ -39,6 +39,7 @@
                 .post('/api/patient', patient)
                 .then(function (response) {
                     return response.data;
+                    console.log(response.data);
                 })
         }
 
