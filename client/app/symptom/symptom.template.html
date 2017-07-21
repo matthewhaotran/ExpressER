@@ -1,77 +1,48 @@
-<script src="dist/sweetalert.min.js"></script>
 <div class="pre-scrollable">
-    <div layout="column" layout-align="center start" layout-padding flex>
-        <p class="inset">
-            <h2>Please choose from the symptoms that best describe the reasons for you visit to Express Emergency Room . Thank
-                You .</h2>
-        </p>
-        <div flex-gt-sm="50" flex>
+    <div class="md-padding" ng-cloak style="min-height:270px">
+        <div layout="row" layout-wrap>
 
-            <md-content>
-                <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft({id: symptom.id})">
-                    Cancer
-                </md-button>
-                <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()">
-                    Fever
-                </md-button>
-                <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
-                    Fracture
-                </md-button>
-                <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()">
-                    Strokes
-                </md-button>
+            <div flex="100" flex-gt-sm="50" layout="column">
+                <div>
+                    <!--
+          In IE, we cannot apply flex directly to <fieldset>
+          @see https://github.com/philipwalton/flexbugs#9-some-html-elements-cant-be-flex-containers
+        -->
+                    <fieldset class="standard">
+                        <legend>Using &lt;md-checkbox&gt; with &lt;ng-checked&gt; </legend>
+                        <div layout="row" layout-wrap flex>
+                            <div flex="50" ng-repeat="item in symptomCtrl.items">
+                                <md-checkbox ng-checked="symptomCtrl.exists(symptomCtrl.item, symptomCtrl.selected)" ng-click="symptomCtrl.toggle(symptomCtrl.item, symptomCtrl.selected)">
+                                    {{ item }} <span ng-if="symptomCtrl.exists(symptomCtrl.item, symptomCtrl.selected)">selected</span>
+                                </md-checkbox>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
 
-            </md-content>
-            <md-content>
+            <div flex="100" flex-gt-sm="50" layout="column">
+                <div>
+                    <fieldset class="standard">
+                        <legend>Using &lt;input type="checkbox"&gt;</legend>
+                        <div layout="row" layout-wrap flex>
+                            <div ng-repeat="item in symptomCtrl.items" class="standard" flex="50">
+                                <label>
+                <input type="checkbox" ng-checked="symptomCtrl.exists(symptomCtrl.item, symptomCtrl.selected)"
+                       ng-click="symptomCtrl.toggle(symptomCtrl.item, symptomCtrl.selected)"/>
+                {{item }}
+              </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
 
-                <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()">
-                    Headache
-                </md-button>
-
-                <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
-                    Abdominal Pain
-                </md-button>
-                <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()">
-                    Rash
-                </md-button>
-
-                <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
-                    Chest Pain
-                </md-button>
-
-            </md-content>
-
+            <div flex="100">
+                <h2 class="md-title">Selected Items</h2>
+                <code style="display: block; padding: 8px;">{{symptomCtrl.selected | json}}</code>
+            </div>
         </div>
 
     </div>
-
-    <md-toolbar class="md-primary">
-        <div class="md-toolbar-tools">
-            <h3 class="md-flex">Choosen Symptoms</h3>
-        </div>
-    </md-toolbar>
-    <md-content>
-        Lung cancer is the leading cause of cancer deaths in the United States.
-         A fever is a temporary increase in your body temperature, often due to an illness.
-        A hip fracture is a serious injury, with complications that can be life-threatening. The risk of hip fracture rises with age.
-        A stroke occurs when the blood supply to part of your brain is interrupted or severely reduced, depriving brain tissue of oxygen and nutrients. Within minutes, brain cells begin to die.
-        Cluster headaches, which occur in cyclical patterns or clusters, are one of the most painful types of headache. A cluster headache commonly awakens you in the middle of the night with intense pain in or around one eye on one side of your head.
-    </md-content>
-
-</div>
-
-<input type="checkbox" ng-model="checked" aria-label="Toggle ngShow"><br />
-<div class="check-element funky-show-hide" ng-show="checked">
-  <table class="table table-bordered">
-    <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
-        Abdominal Pain
-    </md-button>
-    <md-button class="md-primary md-raised edgePadding" ng-click="openOffscreen()">
-        Rash
-    </md-button>
-
-    <md-button class="md-primary md-raised edgePadding" ng-click="openFromLeft()">
-        Chest Pain
-    </md-button>
-</table>
 </div>
