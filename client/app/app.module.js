@@ -29,7 +29,7 @@
         // define a state : $stateProvider.state(<name>, <options>)
         $stateProvider.state('splash', {
             url: '/splash',
-            controller: 'SplashController as SplashCtrl',
+            controller: 'SplashController as splashCtrl',
             templateUrl: 'app/splash/splash.template.html'
         });
 
@@ -43,7 +43,7 @@
          $stateProvider.state('wizard.emergencyContact', {
 
             url: '/emergencyContact',
-            controller: 'EmergencyContactController as EmergencyContactCtrl',
+            controller: 'EmergencyContactController as emergencyContactCtrl',
             templateUrl: 'app/emergencyContact/emergencyContact.template.html'
         });
 
