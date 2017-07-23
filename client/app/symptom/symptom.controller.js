@@ -63,12 +63,12 @@
                         .then(function (patientSymptom) {
                             vm.patientSymptom = patientSymptom;
                         })
+
+                    $state.go('painScale', {id: patientSymptom.visitId});    
                 })
 
 
-            $state.go('painScale', {
-                id: visit.id
-            });
+            
         }
 
     }

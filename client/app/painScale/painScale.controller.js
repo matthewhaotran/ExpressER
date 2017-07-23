@@ -10,14 +10,25 @@
     function PainScaleController($stateParams, $state, visitFactory) {
         /* jshint validthis:true */
         var vm = this;
+        
         vm.addPainScale = addPainScale;
 
         activate();
 
-        function activate() {}
+        function activate() {
+            visitFactory
+                .getById($stateParams.id)
+                .then(function(visit) {
+                    vm.visit = visit;
+                })
+        }
 
-        function addPainScale () {
-            
+        function addPainScale (visit) {
+            visitFactory
+                .update(visit)
+                .then(function(visit) {
+                    $state.go('consent', {id: visit.patientId});    
+                });
         }
     }
 })();
