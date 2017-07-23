@@ -5,10 +5,14 @@
         .module('app.emergencyContact')
         .controller('EmergencyContactController', EmergencyContactController);
 
-    EmergencyContactController.$inject = ['$stateParams', '$state', 'patientFactory'];
+    EmergencyContactController.$inject = ['$stateParams', '$state', 'patientFactory', 'emergencyContactFactory'];
 
-    function EmergencyContactController($stateParams, $state, patientFactory) {
+    function EmergencyContactController($stateParams, $state, patientFactory, emergencyContactFactory) {
         var vm = this;
+        vm.createEmergencyContact = createEmergencyContact;
+        vm.contact = {
+            patientId: $stateParams.id
+        }
         
 
 
@@ -21,6 +25,15 @@
                     .getById($stateParams.id)
                     .then(function (patient) {
                         vm.patient = patient;
+                    });
+
+        }
+
+        function createEmergencyContact (contact) {
+            emergencyContactFactory
+                    .create(contact)
+                    .then(function () {
+                        $state.go('symptom', {id: contact.patientId});
                     });
 
         }
