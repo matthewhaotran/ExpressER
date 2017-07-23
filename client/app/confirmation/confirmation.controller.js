@@ -1,18 +1,26 @@
-(function(){
+(function () {
     'use strict';
 
     angular
         .module('app.confirmation')
         .controller('ConfirmationController', ConfirmationController)
 
-    ConfirmationController.$inject = ['$stateParams', '$state'];
+    ConfirmationController.$inject = ['$stateParams', '$state', 'patientFactory', 'visitFactory'];
 
-    function ConfirmationController($stateParams, $state) {
+    function ConfirmationController($stateParams, $state, patientFactory, visitFactory) {
         /* jshint validthis:true */
         var vm = this;
 
         activate();
 
-        function activate() { }
+        function activate() {
+            patientFactory
+                .getById($stateParams.id)
+                .then(function (patient) {
+                    vm.patient = patient;
+                });
+
+            
+        }
     }
 })();

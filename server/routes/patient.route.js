@@ -32,8 +32,8 @@ router.post('/', function (req, res) {
 // UPDATE
 router.put('/:id', function (req, res) {
   db.Patient.findById(req.params.id).then(function (patient) {
-    patient.update(req.body).then(function () {
-      res.sendStatus(204);
+    patient.update(req.body).then(function (patient) {
+      res.json(patient);
     });
   });
 }); 
@@ -45,7 +45,7 @@ router.delete('/:id', function (req, res) {
       res.sendStatus(404);
     } else {
       patient.destroy().then(function () {
-        res.json(patient);
+        res.send(204).json(patient);
       });
     }
   });
