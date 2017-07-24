@@ -30,14 +30,15 @@ gulp.task('build:js', () =>
     'node_modules/angular-animate/angular-animate.js',
     'node_modules/angular-material/angular-material.js',
     'node_modules/angular-material-icons/angular-material-icons.js',
+    'node_modules/sweetalert/dist/sweetalert.min.js',
     'node_modules/angular-ui-router/release/angular-ui-router.js',
     'client/**/*.module.js',
     'client/**/*.js'
   ])
   .pipe($.concat('bundle.min.js'))
-  .pipe($.uglify().on('error', (err) => {
-    console.log(`Error: ${err}`);
-  }))
+  // .pipe($.uglify().on('error', (err) => {
+  //   console.log(`Error: ${err}`);
+  // }))
   .pipe(gulp.dest('dist/js'))
 );
 
@@ -47,6 +48,7 @@ gulp.task('build:css', () =>
     'node_modules/bootstrap/dist/css/bootstrap.css',
     'node_modules/angular-material/angular-material.css',
     'node_modules/font-awesome/css/font-awesome.css',
+    'node_modules/sweetalert/dist/sweetalert.css',
     'client/**/*.css'
   ])
   .pipe($.concat('bundle.min.css'))

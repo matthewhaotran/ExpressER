@@ -1,59 +1,108 @@
 <div layout-padding>
-        <div>
-            <md-toolbar class="md-indigo">
-                <div class="md-toolbar-tools">
-                    <md-truncate flex>Please Confirm Information</md-truncate>
-            </md-toolbar>
+    <div>
+        <md-toolbar class="md-indigo">
+            <div class="md-toolbar-tools">
+                <md-truncate flex>Please Confirm Information</md-truncate>
+        </md-toolbar>
+        </div>
+    </div>
+    <div class="pre-scrollable">
+        <div layout="row">
+            <div flex="33">
+                <label>First Name:</label>
+                <p>{{confirmCtrl.patient.firstName}}</p>
+            </div>
+            <div flex="33">
+                <label>Middle Name:</label>
+                <p>{{confirmCtrl.patient.middleName}}</p>
+            </div>
+            <div flex="33">
+                <label>Last Name:</label>
+                <p>{{confirmCtrl.patient.lastName}}</p>
             </div>
         </div>
-        <div class="pre-scrollable">
-            <div layout="row">
-                <div flex="33"><label>First Name:</label></div>
-                <div flex="33"><label>Middle Name:</label></div>
-                <div flex="33"><label>Last Name:</label></div>
+        <div layout="row">
+            <div flex="33">
+                <label>Date of Birth:</label>
+                <p>{{confirmCtrl.patient.dob}}</p>
             </div>
-            <div layout="row">
-                <div flex="33"><label>Date of Birth:</label></div>
-                <div flex="33"><label>Social Security Number:</label></div>
+            <div flex="33">
+                <label>Social Security Number:</label>
+                <p>{{confirmCtrl.patient.ssn}}</p>
             </div>
-            <div layout="row">
-                <div flex="33"><label>Address1:</label></div>
-                <div flex="33"><label>Address2:</label></div>
+        </div>
+        <div layout="row">
+            <div flex="33">
+                <label>Address1:</label>
+                <p>{{confirmCtrl.patient.address1}}</p>
             </div>
-            <div layout="row">
-                <div flex="33"><label>City:</label></div>
-                <div flex="33"><label>State:</label></div>
-                <div flex="33"><label>ZIP:</label></div>
+            <div flex="33">
+                <label>Address2:</label>
+                <p>{{confirmCtrl.patient.address2}}</p>
             </div>
-            <div layout="row">
-                <div flex="33"><label>Mobile Phone:</label></div>
-                <div flex="33"><label>Home Phone:</label></div>
-                <div flex="33"><label>Work Phone:</label></div>
+        </div>
+        <div layout="row">
+            <div flex="33">
+                <label>City:</label>
+                <p>{{confirmCtrl.patient.city}}</p>
             </div>
+            <div flex="33">
+                <label>State:</label>
+                <p>{{confirmCtrl.patient.state}}</p>
+            </div>
+            <div flex="33">
+                <label>ZIP:</label>
+                <p>{{confirmCtrl.patient.zip}}</p>
+            </div>
+        </div>
+        <div layout="row">
+            <div flex="33">
+                <label>Mobile Phone:</label>
+                <p>{{confirmCtrl.patient.mobilePhone}}</p>
+            </div>
+            <div flex="33">
+                <label>Home Phone:</label
+                    <p>{{confirmCtrl.patient.homePhone}}</p>
+                    </div>
+                <div flex="33">
+                    <label>Work Phone:</label>
+                <p>{{confirmCtrl.patient.workPhone}}</p>
+            </div>
+        </div>
 
-            <md-divider ng-if="!$last"></md-divider>
-            <div layout="column">
-                <label><b><u>Emergency Contact</u></b></label>
+        <md-divider ng-if="!$last"></md-divider>
+        <div layout="column">
+            <label><b><u>Emergency Contact</u></b></label>
+        </div>
+        <div ng-repeat="emergencyContact in confirmCtrl.emergencyContacts">
+            <div layout="row">
+                <div flex="33">
+                    <label>First Name:</label>
+                    <p>{{emergencyContact.firstName}}</p>
                 </div>
-                <div layout ="row">
-                <div flex="33"><label>First Name:</label></div>
-                <div flex="33"><label>Last Name:</label></div>
+                <div flex="33">
+                    <label>Last Name:</label>
+                    <p>{{emergencyContact.lastName}}</p>
+                </div>
             </div>
             <div layout="column">
-                <label>Address:</label>
-                <label>Phone Number:</label>
+                <label>Mobile Number:</label>
+                <p>{{emergencyContact.mobilePhone}}</p>
                 <label>Relationship To Patient:</label>
-                </div>
-
-                <md-divider ng-if="!$last"></md-divider>
-                <div layout="column">
-             <b><u>Reason for Visit</u></b>       
-                <label>Symptom(s):</label>
-                <label>Pain Scale:</label>
+                <p>{{emergencyContact.relationship}}</p>
             </div>
-            <section layout="row" layout-sm="row" layout-align="center center" layout-wrap>
-                <md-button class="md-raised md-gray">Edit</md-button>
-            </section>
         </div>
-<md-button class="md-raised md-warn" ui-sref="success">Go to Success Page</md-button>
-<pre>{{confirmCtrl | json}}</pre>
+        <md-divider ng-if="!$last"></md-divider>
+        <div layout="column">
+            <b><u>Reason for Visit</u></b>
+            <label>Symptom(s):</label>
+            <p>{{ }}</p>
+            <label>Pain Scale:</label>
+            <p>{{confirmCtrl.visit[0].painScale}}</p>
+        </div>
+        <section layout="row" layout-sm="row" layout-align="center center" layout-wrap>
+            <md-button class="md-raised md-gray">Edit</md-button>
+        </section>
+    </div>
+    <md-button class="md-raised md-warn" ui-sref="success">Go to Success Page</md-button>
+    <pre>{{confirmCtrl | json}}</pre>

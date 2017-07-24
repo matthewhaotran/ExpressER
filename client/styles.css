@@ -10,3 +10,7 @@ body {
   margin: 1em 1em;
 }
 
+.pre-scrollable {
+    max-height: 700px;
+    overflow-y: scroll;
+}

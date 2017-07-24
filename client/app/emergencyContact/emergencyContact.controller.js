@@ -14,8 +14,6 @@
 			patientId: $stateParams.id
 		};
 
-
-
 		activate();
 
 		////////////////
@@ -33,18 +31,31 @@
 					vm.emergencyContacts = emergencyContacts;
 				});
 
+            vm.contact = {
+                patientId: $stateParams.id,
+                firstName: '',
+                lastName: '',
+                mobilePhone: '',
+                relationship: ''
+            }
+
+        }
+
+        function createEmergencyContact(contact) {
+            emergencyContactFactory
+                .create(contact)
+                .then(function () {
+                    activate();
+                });
+
+
 		}
 
-		function createEmergencyContact(contact) {
-			emergencyContactFactory
-				.create(contact)
-				.then(function () {
-					$state.go('symptom', {
-						id: contact.patientId
-					});
-				});
-
-		}
+        function goToSymptom(contact) {
+            $state.go('symptom', {
+                id: $stateParams.id
+            });
+        }
 
 
 	}
