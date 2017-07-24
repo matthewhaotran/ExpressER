@@ -64,7 +64,7 @@ describe('Visits route', () => {
         newVisit.save().then(visit => {
             request(app)
                 .delete('/api/visit/' + visit.id)
-                .expect(200, done);
+                .expect(204, done);
         });
     });
 });

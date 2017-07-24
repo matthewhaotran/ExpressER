@@ -1,5 +1,9 @@
 <h1 style="text-align: center; margin-top: 1em">Please select your pain level</h1>
 
+<div layout="column" layout-padding ng-cloak>
+
+    <br/>
+
 <div layout style="margin-top: 5em">
   <div flex="10" layout layout-align="center center">
     <span class="md-body-1"><i class="fa fa-smile-o fa-2x" aria-hidden="true"></i></span>
@@ -9,11 +13,10 @@
   <div flex="10" layout layout-align="center center">
     <span class="md-body-1"><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></span>
   </div>
-  <md-input-container>
-    <input flex type="number" ng-model="painScaleCtrl.visit.painScale" aria-label="blue" aria-controls="blue-slider">
-  </md-input-container>
+
 </div>
 
-<button ng-click="painScaleCtrl.addPainScale(painScaleCtrl.visit)">Post</button>
+<md-button class="md-raised md-warn" ng-click="painScaleCtrl.addPainScale(painScaleCtrl.visit)">Post</md-button>
+</div>
 
 <pre>{{painScaleCtrl.visit | json}}</pre>
