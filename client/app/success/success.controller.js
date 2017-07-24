@@ -5,16 +5,16 @@
         .module('app.success')
         .controller('SuccessController', SuccessController)
 
-    SuccessController.$inject = [];
+    SuccessController.$inject = ['$stateParams','$state'];
 
-    function SuccessController() {
+    function SuccessController($stateParams, $state) {
         /* jshint validthis:true */
         var vm = this;
 
         activate();
 
         function activate() {
-            
+            setTimeout(function(){ $state.go('splash') }, 10000);
          }
     }
 })();
