@@ -1,12 +1,12 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular.module('app.confirmation', [
-        // Angular modules
+	angular.module('app.confirmation', [
+		// Angular modules
 
-        // Custom modules
+		// Custom modules
 
-        // 3rd Party Modules
+		// 3rd Party Modules
 
-    ]);
+	]);
 })();

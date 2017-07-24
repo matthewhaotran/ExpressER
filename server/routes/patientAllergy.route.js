@@ -39,7 +39,7 @@ router.delete('/:id', function (req, res) {
       res.sendStatus(404);
     } else {
     patientAllergy.destroy().then(function () {
-      res.sendStatus(200);
+      res.sendStatus(204);
     });
     }
   });

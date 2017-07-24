@@ -1,34 +1,34 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.painScale')
-        .controller('PainScaleController', PainScaleController)
+	angular
+		.module('app.painScale')
+		.controller('PainScaleController', PainScaleController);
 
-    PainScaleController.$inject = ['$stateParams', '$state', 'visitFactory'];
+	PainScaleController.$inject = ['$stateParams', '$state', 'visitFactory'];
 
-    function PainScaleController($stateParams, $state, visitFactory) {
-        /* jshint validthis:true */
-        var vm = this;
+	function PainScaleController($stateParams, $state, visitFactory) {
+		/* jshint validthis:true */
+		var vm = this;
         
-        vm.addPainScale = addPainScale;
+		vm.addPainScale = addPainScale;
 
-        activate();
+		activate();
 
-        function activate() {
-            visitFactory
-                .getById($stateParams.id)
-                .then(function(visit) {
-                    vm.visit = visit;
-                })
-        }
+		function activate() {
+			visitFactory
+				.getById($stateParams.id)
+				.then(function(visit) {
+					vm.visit = visit;
+				});
+		}
 
-        function addPainScale (visit) {
-            visitFactory
-                .update(visit)
-                .then(function(visit) {
-                    $state.go('consent', {id: visit.patientId});    
-                });
-        }
-    }
+		function addPainScale (visit) {
+			visitFactory
+				.update(visit)
+				.then(function(visit) {
+					$state.go('consent', {id: visit.patientId});    
+				});
+		}
+	}
 })();

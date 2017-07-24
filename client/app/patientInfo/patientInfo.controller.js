@@ -1,22 +1,22 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.patientInfo')
-        .controller('PatientInfoController', PatientInfoController);
+	angular
+		.module('app.patientInfo')
+		.controller('PatientInfoController', PatientInfoController);
 
     PatientInfoController.$inject = ['$stateParams', '$state', 'patientFactory', 'insuranceFactory'];
 
     function PatientInfoController($stateParams, $state, patientFactory, insuranceFactory) {
         var vm = this;
 
-        vm.save = save;
+		vm.save = save;
 
-        //activate();
+		//activate();
 
         
 
-        //function activate() {}
+		//function activate() {}
 
         function save(patient, insurance){
             patientFactory
@@ -36,7 +36,8 @@
                 });            
         }
 
-    }
+
+	}
 })();
 
 

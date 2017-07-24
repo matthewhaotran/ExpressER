@@ -1,9 +1,10 @@
 (function(){
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.success')
-        .controller('SuccessController', SuccessController)
+	angular
+		.module('app.success')
+		.controller('SuccessController', SuccessController);
+
 
     SuccessController.$inject = ['$stateParams','$state'];
 
@@ -11,10 +12,12 @@
         /* jshint validthis:true */
         var vm = this;
 
-        activate();
+
+		activate();
 
         function activate() {
             setTimeout(function(){ $state.go('splash') }, 10000);
          }
     }
+
 })();

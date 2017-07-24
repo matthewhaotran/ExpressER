@@ -1,38 +1,36 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.confirmation')
-        .controller('ConfirmationController', ConfirmationController)
+	angular
+		.module('app.confirmation')
+		.controller('ConfirmationController', ConfirmationController);
 
-    ConfirmationController.$inject = ['$stateParams', '$state', 'patientFactory', 'visitFactory'];
+	ConfirmationController.$inject = ['$stateParams', '$state', 'patientFactory', 'visitFactory'];
 
-    function ConfirmationController($stateParams, $state, patientFactory, visitFactory) {
-        /* jshint validthis:true */
-        var vm = this;
+	function ConfirmationController($stateParams, $state, patientFactory, visitFactory) {
+		/* jshint validthis:true */
+		var vm = this;
 
-        activate();
+		activate();
 
-        function activate() {
-            patientFactory
-                .getById($stateParams.id)
-                .then(function (patient) {
-                    vm.patient = patient;
-                });
+		function activate() {
+			patientFactory
+				.getById($stateParams.id)
+				.then(function (patient) {
+					vm.patient = patient;
+				});
 
-            patientFactory
-                .getByPatient($stateParams.id)
-                .then(function (emergencyContacts) {
-                    vm.emergencyContacts = emergencyContacts;
-                });
+			patientFactory
+				.getByPatient($stateParams.id)
+				.then(function (emergencyContacts) {
+					vm.emergencyContacts = emergencyContacts;
+				});
 
-            visitFactory
-                .getByPatient($stateParams.id)
-                .then(function (visit) {
-                    vm.visit = visit;
-                });
-
-
+			visitFactory
+				.getByPatient($stateParams.id)
+				.then(function (visit) {
+					vm.visit = visit;
+				});
         }
     }
 })();

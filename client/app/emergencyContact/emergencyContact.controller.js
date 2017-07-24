@@ -1,38 +1,35 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.emergencyContact')
-        .controller('EmergencyContactController', EmergencyContactController);
+	angular
+		.module('app.emergencyContact')
+		.controller('EmergencyContactController', EmergencyContactController);
 
-    EmergencyContactController.$inject = ['$stateParams', '$state', 'patientFactory', 'emergencyContactFactory'];
+	EmergencyContactController.$inject = ['$stateParams', '$state', 'patientFactory', 'emergencyContactFactory'];
 
-    function EmergencyContactController($stateParams, $state, patientFactory, emergencyContactFactory) {
-        var vm = this;
-        vm.createEmergencyContact = createEmergencyContact;
-        vm.goToSymptom = goToSymptom;
-        vm.contact = {
-            patientId: $stateParams.id
-        }
+	function EmergencyContactController($stateParams, $state, patientFactory, emergencyContactFactory) {
+		var vm = this;
+		vm.createEmergencyContact = createEmergencyContact;
+		vm.contact = {
+			patientId: $stateParams.id
+		};
 
+		activate();
 
+		////////////////
 
-        activate();
+		function activate() {
+			patientFactory
+				.getById($stateParams.id)
+				.then(function (patient) {
+					vm.patient = patient;
+				});
 
-        ////////////////
-
-        function activate() {
-            patientFactory
-                .getById($stateParams.id)
-                .then(function (patient) {
-                    vm.patient = patient;
-                });
-
-            patientFactory
-                .getByPatient($stateParams.id)
-                .then(function (emergencyContacts) {
-                    vm.emergencyContacts = emergencyContacts;
-                });
+			patientFactory
+				.getByPatient($stateParams.id)
+				.then(function (emergencyContacts) {
+					vm.emergencyContacts = emergencyContacts;
+				});
 
             vm.contact = {
                 patientId: $stateParams.id,
@@ -51,7 +48,8 @@
                     activate();
                 });
 
-        }
+
+		}
 
         function goToSymptom(contact) {
             $state.go('symptom', {
@@ -60,5 +58,5 @@
         }
 
 
-    }
+	}
 })();
