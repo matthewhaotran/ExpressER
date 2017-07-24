@@ -113,19 +113,22 @@
             <label>By checking these boxes you agree to give consent for the following:</label>
 
             <div layout="row">
-                <md-checkbox ng-model="data.cb1" aria-label="Checkbox 1" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn md-align-top-left"
+                <md-checkbox ng-model="consentCtrl.patient.consentForCare" aria-label="Checkbox 1" ng-true-value="true" ng-false-value="false" class="md-warn md-align-top-left"
                     flex>
                     Consent to Give Care
                 </md-checkbox>
 
-                <md-checkbox ng-model="data.cb2" aria-label="Checkbox 2" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn md-align-top-left"
+                <md-checkbox ng-model="consentCtrl.discloseHealth" aria-label="Checkbox 2" ng-true-value="true" ng-false-value="false" class="md-warn md-align-top-left"
                     flex>
                     Use and Disclosure of Health Information
                 </md-checkbox>
 
-                <md-checkbox ng-model="data.cb3" aria-label="Checkbox 3" ng-true-value="'yup'" ng-false-value="'nope'" class="md-warn md-align-top-left"
+                <md-checkbox ng-model="consentCtrl.patient.consentForText" aria-label="Checkbox 3" ng-true-value="true" ng-false-value="false" class="md-warn md-align-top-left"
                     flex>
                     Communication Preferences
                 </md-checkbox>
             </div>
         </div>
+
+        <md-button class="md-raised md-warn" ng-click="consentCtrl.addConsent(consentCtrl.patient)">Go to Confirmation</md-button>
+        <pre>{{consentCtrl | json}}</pre>

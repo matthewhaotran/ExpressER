@@ -19,22 +19,13 @@
         //function activate() {}
 
         function save(patient){
-            console.log(patient);
-            if(patient.id){
-                patientFactory
-                .update(patient)
-                .then(function(){
-                    alert('patient Updated!');
-                   // $state.go('patient-grid');
-                });
-            } else {
-                patientFactory
+            patientFactory
                 .create(patient)
-                .then(function(){
+                .then(function(patient){
                     alert('patient Created!');
-                    //$state.go('patient-grid');
+                    $state.go('emergencyContact', {id: patient.id});
                 });
-             }
+             
             
         }
 

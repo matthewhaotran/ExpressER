@@ -21,6 +21,12 @@
 </div>
 <div flex="100">
     <h2 class="md-title">Selected Symptoms</h2>
+
+    <pre style="display: block; padding: 8px;">{{symptomCtrl.selected| json}}</pre>
+</div>
+<md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">Go to Pain Scale</md-button>
+<pre>{{symptomCtrl | json}}</pre>
+
     <code style="display: block; padding: 8px;">{{symptomCtrl.selected}}  </code>
 </div>
 <md-chips ng-model="ctrl.roFruitNames" name="fruitName" readonly="ctrl.readonly" md-removable="ctrl.removable" md-max-chips="5"
@@ -30,3 +36,4 @@
         <em>(symptom)</em>
     </md-chip-template>
 </md-chips>
+

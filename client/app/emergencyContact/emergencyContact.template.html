@@ -36,75 +36,9 @@
 
         </md-content>
 
-        <div layout="row" layout-align="center center">
-            <md-button class="md-raised" ng-click="show2 = true">Add Additional Emergency Contact</md-button>
-        </div>
-
-        <div  ng-show="show2" >
-            <md-contentclass="md-no-momentum">
-
-                <md-input-container class="md-icon-float md-block">
-                    <label>Contact First Name</label>
-                    <md-icon class="name"></md-icon>
-                    <input ng-model="emergencyContactCtrl.firstName" type="text">
-                </md-input-container>
-
-                <md-input-container class="md-icon-float md-block">
-                    <label>Contact Last Name</label>
-                    <md-icon class="name"></md-icon>
-                    <input ng-model="emergencyContactCtrl.lastName" type="text">
-                </md-input-container>
-
-                <md-input-container class="md-icon-float md-block">
-                    <label>Contact Phone Number</label>
-                    <md-icon class="name"></md-icon>
-                    <input ng-model="emergencyContactCtrl.mobilePhone" type="text">
-                </md-input-container>
-
-                <md-input-container class="md-icon-float md-block">
-                    <label>Relationship to Contact</label>
-                    <md-icon class="name"></md-icon>
-                    <input ng-model="emergencyContactCtrl.relationship" type="text">
-                </md-input-container>
-
-            </md-content>
-
-            <div layout="row" layout-align="center center">
-                <md-button class="md-raised" ng-click="show3 = true">Add Additional Emergency Contact</md-button>
-            </div>
-        </div>
-
-        <md-content ng-show="show3" class="md-no-momentum">
-
-            <md-input-container class="md-icon-float md-block">
-                <label>Contact First Name</label>
-                <md-icon class="name"></md-icon>
-                <input ng-model="emergencyContactCtrl.patient.firstName" type="text">
-            </md-input-container>
-
-            <md-input-container class="md-icon-float md-block">
-                <label>Contact Last Name</label>
-                <md-icon class="name"></md-icon>
-                <input ng-model="emergencyContactCtrl.lastName" type="text">
-            </md-input-container>
-
-            <md-input-container class="md-icon-float md-block">
-                <label>Contact Phone Number</label>
-                <md-icon class="name"></md-icon>
-                <input ng-model="emergencyContactCtrl.mobilePhone" type="text">
-            </md-input-container>
-
-            <md-input-container class="md-icon-float md-block">
-                <label>Relationship to Contact</label>
-                <md-icon class="name"></md-icon>
-                <input ng-model="emergencyContactCtrl.relationship" type="text">
-            </md-input-container>
-
-        </md-content>
-
     </div>
     
-    {{emergencyContactCtrl.patient.firstName}}
+    <md-button class="md-raised md-warn" ng-click="emergencyContactCtrl.createEmergencyContact(emergencyContactCtrl.contact)">Go to Symptoms</md-button>
 
 </div>
 <pre>{{emergencyContactCtrl | json}}</pre>

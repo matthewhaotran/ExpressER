@@ -32,54 +32,47 @@
             controller: 'SplashController as splashCtrl',
             templateUrl: 'app/splash/splash.template.html'
         });
-
-
-          $stateProvider.state('wizard', {
-            url: '/wizard',
-            controller: 'WizardController as wizardCtrl',
-            templateUrl: '/app/wizard/wizard.html'
-        });
         
-         $stateProvider.state('wizard.emergencyContact', {
+         $stateProvider.state('emergencyContact', {
             url: '/emergencyContact?id',
             controller: 'EmergencyContactController as emergencyContactCtrl',
             templateUrl: 'app/emergencyContact/emergencyContact.template.html'
         });
 
-        $stateProvider.state('wizard.success', {
+        $stateProvider.state('success', {
             url: '/success',
             controller: 'SuccessController as successCtrl',
             templateUrl: 'app/success/success.template.html'
         });
 
-        $stateProvider.state('wizard.symptom', {
+        $stateProvider.state('symptom', {
             url: '/symptom?id',
             controller: 'SymptomController as symptomCtrl',
             templateUrl: 'app/symptom/symptom.template.html'
         });
 
-        $stateProvider.state('wizard.consent', {
+        $stateProvider.state('consent', {
             url: '/consent?id',
             controller: 'ConsentController as consentCtrl',
             templateUrl: 'app/consent/consent.template.html'
         });
 
       
-        $stateProvider.state('wizard.patient', {
+        $stateProvider.state('patient', {
 
             url: '/patient',
             controller: 'PatientInfoController as patientInfoCtrl',
             templateUrl: 'app/patientInfo/patientInfo.template.html'
         });
 
-        $stateProvider.state('wizard.confirmation', {
+        $stateProvider.state('confirmation', {
             url: '/confirmation?id',
             controller: 'ConfirmationController as confirmCtrl',
             templateUrl: 'app/confirmation/confirmation.template.html'
         });
 
       
-        $stateProvider.state('wizard.painScale', {
+        $stateProvider.state('painScale', {
 
             url: '/painScale?id',
             controller: 'PainScaleController as painScaleCtrl',

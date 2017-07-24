@@ -13,7 +13,8 @@
             getById: getById,
             create: create,
             update: update,
-            remove: remove
+            remove: remove,
+            getByPatient: getByPatient
         };
 
         return service;
@@ -29,6 +30,14 @@
         function getById(id) {
             return $http
                 .get('/api/patient/' + id)
+                .then(function (response) {
+                    return response.data;
+                })
+        }
+
+        function getByPatient(id) {
+            return $http
+                .get('/api/patient/' + id + '/emergencyContact')
                 .then(function (response) {
                     return response.data;
                 })
