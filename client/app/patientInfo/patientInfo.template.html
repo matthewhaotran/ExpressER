@@ -74,9 +74,18 @@
             <input ng-model="patientInfoCtrl.patient.ssn" type="text">
         </md-input-container>
         </div>
+    <div layout ="row">
+        <md-input-container class="md-icon-float md-block input">
+            <label>Insurance Company</label>
+            <input ng-model="patientInfoCtrl.insurance.companyName" type="text">
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block input">
+            <label>Policy Number</label>
+            <input ng-model="patientInfoCtrl.insurance.insuranceNumber" type="text">
+        </md-input-container>
+        </div>
     </md-content>
 
-    <md-button class="md-raised md-warn" ng-click="patientInfoCtrl.save(patientInfoCtrl.patient)">Go to EmergencyContact</md-button>
+    <md-button class="md-raised md-warn" ng-click="patientInfoCtrl.save(patientInfoCtrl.patient, patientInfoCtrl.insurance)">Go to EmergencyContact</md-button>
 
-     <pre>{{patientInfoCtrl.patient | json}}</pre> 
 
