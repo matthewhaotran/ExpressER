@@ -21,7 +21,7 @@
 </div>
 <div flex="100">
     <h2 class="md-title">Selected Symptoms</h2>
-    <pre style="display: block; padding: 8px;">{{symptomCtrl.selected | json}}</pre>
+    <pre style="display: block; padding: 8px;">{{symptomCtrl.selected| json}}</pre>
 </div>
 <md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">Go to Pain Scale</md-button>
-<pre>{{symptomCtrl.patient | json}}</pre>
+<pre>{{symptomCtrl | json}}</pre>

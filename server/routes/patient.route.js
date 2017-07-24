@@ -20,6 +20,21 @@ router.get('/:id', function (req, res) {
   });
 });
 
+//Get Emergency Contacts by patientId
+router.get('/:id/emergencyContact', function (req, res) {
+  db.EmergencyContact.findAll({
+    where: {
+      patientId: req.params.id
+    }
+  }).then(function (emergencyContacts) {
+    if (emergencyContacts === null) {
+      res.sendStatus(404);
+    } else {
+      res.json(emergencyContacts);
+    }
+  });
+});
+
 //POST: /api/patients
 router.post('/', function (req, res) {
   const newPatient = new db.Patient(req.body);
@@ -36,7 +51,7 @@ router.put('/:id', function (req, res) {
       res.json(patient);
     });
   });
-}); 
+});
 
 // DELETE
 router.delete('/:id', function (req, res) {
@@ -53,4 +68,3 @@ router.delete('/:id', function (req, res) {
 
 
 module.exports = router;
-

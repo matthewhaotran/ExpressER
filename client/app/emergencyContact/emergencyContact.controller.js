@@ -13,7 +13,7 @@
         vm.contact = {
             patientId: $stateParams.id
         }
-        
+
 
 
         activate();
@@ -21,20 +21,28 @@
         ////////////////
 
         function activate() {
-                patientFactory
-                    .getById($stateParams.id)
-                    .then(function (patient) {
-                        vm.patient = patient;
-                    });
+            patientFactory
+                .getById($stateParams.id)
+                .then(function (patient) {
+                    vm.patient = patient;
+                });
+
+            patientFactory
+                .getByPatient($stateParams.id)
+                .then(function (emergencyContacts) {
+                    vm.emergencyContacts = emergencyContacts;
+                });
 
         }
 
-        function createEmergencyContact (contact) {
+        function createEmergencyContact(contact) {
             emergencyContactFactory
-                    .create(contact)
-                    .then(function () {
-                        $state.go('symptom', {id: contact.patientId});
+                .create(contact)
+                .then(function () {
+                    $state.go('symptom', {
+                        id: contact.patientId
                     });
+                });
 
         }
 

@@ -20,7 +20,20 @@
                     vm.patient = patient;
                 });
 
-            
+            patientFactory
+                .getByPatient($stateParams.id)
+                .then(function (emergencyContacts) {
+                    vm.emergencyContacts = emergencyContacts;
+                });
+
+            visitFactory
+                .getByPatient($stateParams.id)
+                .then(function (visit) {
+                    vm.visit = visit;
+                });
+
+
+
         }
     }
 })();
