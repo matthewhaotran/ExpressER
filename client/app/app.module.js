@@ -23,7 +23,7 @@
 	appConfig.$inject = ['$urlRouterProvider', '$stateProvider'];
 
 	function appConfig($urlRouterProvider, $stateProvider) {
-		//define default page-where should the first page of the app begin
+		// define default page-where should the first page of the app begin
 		$urlRouterProvider.otherwise('/splash');
 
 		// define a state : $stateProvider.state(<name>, <options>)

@@ -52,7 +52,7 @@ router.put('/:id', function (request, response) {
       if (visit === null) {
         response.sendStatus(404);
       } else {
-        response.json(visit);
+        response.sendStatus(204);
       }
     });
   });
@@ -63,7 +63,8 @@ router.put('/:id', function (request, response) {
 router.delete('/:id', function (request, response) {
   db.Visit.findById(request.params.id).then(function (visit) {
     visit.destroy().then(function () {
-      response.sendStatus(204).json(visit);
+      // response.sendStatus(204).json(visit);
+      response.status(204).json(visit);
     });
   });
 

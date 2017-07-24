@@ -48,7 +48,7 @@ router.post('/', function (req, res) {
 router.put('/:id', function (req, res) {
   db.Patient.findById(req.params.id).then(function (patient) {
     patient.update(req.body).then(function (patient) {
-      res.json(patient);
+      res.sendStatus(204);
     });
   });
 });
@@ -60,7 +60,7 @@ router.delete('/:id', function (req, res) {
       res.sendStatus(404);
     } else {
       patient.destroy().then(function () {
-        res.send(204).json(patient);
+        res.status(204).json(patient);
       });
     }
   });
