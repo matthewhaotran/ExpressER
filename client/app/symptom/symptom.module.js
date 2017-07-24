@@ -1,7 +1,7 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular.module('app.symptom', [
+	angular.module('app.symptom', [
         
-    ]);
+	]);
 })();

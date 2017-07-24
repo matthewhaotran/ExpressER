@@ -1,35 +1,35 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.patientInfo')
-        .controller('PatientInfoController', PatientInfoController);
+	angular
+		.module('app.patientInfo')
+		.controller('PatientInfoController', PatientInfoController);
 
-    PatientInfoController.$inject = ['$stateParams', '$state', 'patientFactory'];
+	PatientInfoController.$inject = ['$stateParams', '$state', 'patientFactory'];
 
-    function PatientInfoController($stateParams, $state, patientFactory) {
-        var vm = this;
+	function PatientInfoController($stateParams, $state, patientFactory) {
+		var vm = this;
 
-        vm.save = save;
+		vm.save = save;
 
-        //activate();
+		//activate();
 
         
 
-        //function activate() {}
+		//function activate() {}
 
-        function save(patient){
-            patientFactory
-                .create(patient)
-                .then(function(patient){
-                    alert('patient Created!');
-                    $state.go('emergencyContact', {id: patient.id});
-                });
+		function save(patient){
+			patientFactory
+				.create(patient)
+				.then(function(patient){
+					alert('patient Created!');
+					$state.go('emergencyContact', {id: patient.id});
+				});
              
             
-        }
+		}
 
-    }
+	}
 })();
 
 

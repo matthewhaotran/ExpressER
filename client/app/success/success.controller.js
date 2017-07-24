@@ -1,20 +1,20 @@
 (function(){
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.success')
-        .controller('SuccessController', SuccessController)
+	angular
+		.module('app.success')
+		.controller('SuccessController', SuccessController);
 
-    SuccessController.$inject = [];
+	SuccessController.$inject = [];
 
-    function SuccessController() {
-        /* jshint validthis:true */
-        var vm = this;
+	function SuccessController() {
+		/* jshint validthis:true */
+		var vm = this;
 
-        activate();
+		activate();
 
-        function activate() {
+		function activate() {
             
-         }
-    }
+		}
+	}
 })();
