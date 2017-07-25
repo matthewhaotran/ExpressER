@@ -1,0 +1,31 @@
+<h1 class="text-center">Incoming Patients</h1>
+<hr>
+
+<div class="container pre-scrollable">
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Patient Name:</th>
+                <th>Symptoms</th>
+                <th>Check-in Time</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="visit in doctorIncomingPatientCtrl.visits | orderBy:['-checkOutTime','-patientSymptoms[0].symptomId']">
+                <th>{{visit.patient.firstName || 'Anonymous'}} {{visit.patient.lastName}}</th>
+                <th>{{visit.patientSymptoms[0].symptom.description || 'Not inputted'}}</th>
+                <th>{{visit.checkInTime || 'Checked-in'}}</th>
+                <th>{{visit.checkOutTime || 'waiting to be seen'}}</th>
+                <th><button class="btn btn-primary" ng-click="doctorIncomingPatientCtrl.acceptPatient(visit)"><i class="fa fa-medkit"></i></button></th>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<pre>
+{{doctorIncomingPatientCtrl | json}}
+</pre>
