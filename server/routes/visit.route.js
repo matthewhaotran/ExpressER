@@ -52,7 +52,7 @@ router.put('/:id', function (request, response) {
       if (visit === null) {
         response.sendStatus(404);
       } else {
-       response.status(204).json(visit);
+       response.json(visit);
       }
     });
   });

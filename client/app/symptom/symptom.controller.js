@@ -54,21 +54,27 @@
 				.then(function (visit) {
 					vm.visit = visit;
 
-					patientSymptom = {
-						visitId: vm.visit.id,
-					};
 
-					patientSymptomFactory
-						.create(patientSymptom)
-						.then(function (patientSymptom) {
-							vm.patientSymptom = patientSymptom;
-						});
+					for (var i = 0; i < vm.selected.length; i++) {
+						patientSymptom = {
+							visitId: vm.visit.id,
+							symptomId: vm.selected[i].id
+						};
 
-					$state.go('painScale', {id: patientSymptom.visitId});    
+						patientSymptomFactory
+							.create(patientSymptom)
+							.then(function (patientSymptom) {
+								vm.patientSymptom = patientSymptom;
+							});
+					}
+
+					$state.go('painScale', {
+						id: patientSymptom.visitId
+					});
 				});
 
 
-            
+
 		}
 
 	}

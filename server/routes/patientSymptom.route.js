@@ -20,6 +20,20 @@ router.get('/:id', function (req, res) {
     });
 });
 
+router.get('/:id/patientSymptom', function (req, res) {
+    db.PatientSymptom.findAll({
+        where: {
+            visitId: req.params.id
+        }
+    }).then(function (patientSymptoms) {
+        if (patientSymptoms === null) {
+            res.sendStatus(404);
+        } else {
+            res.json(patientSymptoms);
+        }
+    });
+});
+
 //POST: /api/patientSymptoms
 router.post('/', function (req, res) {
     const patientSymptom = db.PatientSymptom.build(req.body);

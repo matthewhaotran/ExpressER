@@ -11,6 +11,7 @@
 		var service = {
 			getAll: getAll,
 			getById: getById,
+			getByVisit: getByVisit,
 			create: create,
 			update: update,
 			remove: remove
@@ -29,6 +30,14 @@
 		function getById(id) {
 			return $http
 				.get('/api/patientSymptom/' + id)
+				.then(function (response) {
+					return response.data;
+				});
+		}
+
+		function getByVisit(id) {
+			return $http
+				.get('/api/patientSymptom/' + id + '/patientSymptom')
 				.then(function (response) {
 					return response.data;
 				});

@@ -5,9 +5,9 @@
 		.module('app.confirmation')
 		.controller('ConfirmationController', ConfirmationController);
 
-	ConfirmationController.$inject = ['$stateParams', '$state', 'patientFactory', 'visitFactory'];
+	ConfirmationController.$inject = ['$stateParams', '$state', 'patientFactory', 'visitFactory', 'patientSymptomFactory'];
 
-	function ConfirmationController($stateParams, $state, patientFactory, visitFactory) {
+	function ConfirmationController($stateParams, $state, patientFactory, visitFactory, patientSymptomFactory) {
 		/* jshint validthis:true */
 		var vm = this;
 
@@ -30,7 +30,16 @@
 				.getByPatient($stateParams.id)
 				.then(function (visit) {
 					vm.visit = visit;
+					
+					patientSymptomFactory
+						.getByVisit(visit[visit.length - 1].id)
+						.then(function(patientSymptoms) {
+							vm.patientSymptoms = patientSymptoms;
+						});
 				});
+
+
+
 		}
 	}
 })();
