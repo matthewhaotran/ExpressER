@@ -78,5 +78,19 @@
 			controller: 'PainScaleController as painScaleCtrl',
 			templateUrl: 'app/painScale/painScale.template.html'
 		});
+
+		$stateProvider.state('doctorLogin', {
+
+			url: '/doctorLogin?id',
+			controller: 'DoctorLoginController as doctorLoginCtrl',
+			templateUrl: 'app/doctorLogin/doctorLogin.template.html'
+		});
+
+		$stateProvider.state('doctorIncomingPatient', {
+
+			url: '/doctorIncomingPatient?id',
+			controller: 'DoctorIncomingPatientController as doctorIncomingPatientCtrl',
+			templateUrl: 'app/doctorIncomingPatient/doctorIncomingPatient.template.html'
+		});
 	}
 })();
