@@ -2,7 +2,7 @@
 	'use strict';
 
 	angular
-		.module('app.specialty')
+		.module('app.core')
 		.factory('specialtyFactory', specialtyFactory);
 
 	specialtyFactory.$inject = ['$http'];
@@ -56,6 +56,9 @@
 				.then(function (response) {
 					return response.data;
 				});
+
+
 		}
+
 	}
 })();

@@ -10,7 +10,7 @@
 	function EmergencyContactController($stateParams, $state, patientFactory, emergencyContactFactory) {
 		var vm = this;
 		vm.createEmergencyContact = createEmergencyContact;
-		vm.goToSymptom=goToSymptom;
+		vm.goToSymptom = goToSymptom;
 		vm.contact = {
 			patientId: $stateParams.id
 		};

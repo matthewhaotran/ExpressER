@@ -15,6 +15,8 @@
 		'app.splash',
 		'app.success',
 		'app.symptom',
+		'app.doctorLogin',
+		'app.doctorIncomingPatient',
 
 		// 3rd Party Modules
 		'ui.router'
