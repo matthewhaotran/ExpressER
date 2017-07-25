@@ -3,6 +3,7 @@ module.exports = function (sequelize, DataTypes) {
 
 	var Visit = sequelize.define('Visit', {
 		note: DataTypes.TEXT,
+		signInTime: DataTypes.DATE,
 		checkInTime: DataTypes.DATE,
 		checkOutTime: DataTypes.DATE,
 		painScale: DataTypes.INTEGER,
