@@ -3,8 +3,19 @@ const db = require('../models');
 
 router.get('/', function (request, response) {
   //return all visits in the database
-  var promise = db.Visit.findAll()
-
+  var promise = db.Visit.findAll({
+    include: [{
+      model: db.Patient,
+      as: 'patient'
+    }, {
+      model: db.PatientSymptom,
+      as: 'patientSymptoms',
+      include:[{
+        model: db.Symptom,
+        as: 'symptom'
+      }]
+    }]
+  })
   promise.then(function (visits) {
     response.json(visits);
   });
