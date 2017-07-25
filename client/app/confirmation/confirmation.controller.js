@@ -31,6 +31,6 @@
 				.then(function (visit) {
 					vm.visit = visit;
 				});
-        }
-    }
+		}
+	}
 })();

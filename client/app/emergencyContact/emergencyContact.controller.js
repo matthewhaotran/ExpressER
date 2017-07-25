@@ -10,6 +10,7 @@
 	function EmergencyContactController($stateParams, $state, patientFactory, emergencyContactFactory) {
 		var vm = this;
 		vm.createEmergencyContact = createEmergencyContact;
+		vm.goToSymptom=goToSymptom;
 		vm.contact = {
 			patientId: $stateParams.id
 		};
@@ -31,31 +32,31 @@
 					vm.emergencyContacts = emergencyContacts;
 				});
 
-            vm.contact = {
-                patientId: $stateParams.id,
-                firstName: '',
-                lastName: '',
-                mobilePhone: '',
-                relationship: ''
-            }
+			vm.contact = {
+				patientId: $stateParams.id,
+				firstName: '',
+				lastName: '',
+				mobilePhone: '',
+				relationship: ''
+			};
 
-        }
+		}
 
-        function createEmergencyContact(contact) {
-            emergencyContactFactory
-                .create(contact)
-                .then(function () {
-                    activate();
-                });
+		function createEmergencyContact(contact) {
+			emergencyContactFactory
+				.create(contact)
+				.then(function () {
+					activate();
+				});
 
 
 		}
 
-        function goToSymptom(contact) {
-            $state.go('symptom', {
-                id: $stateParams.id
-            });
-        }
+		function goToSymptom(contact) {
+			$state.go('symptom', {
+				id: $stateParams.id
+			});
+		}
 
 
 	}

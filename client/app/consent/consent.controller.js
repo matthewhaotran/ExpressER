@@ -26,6 +26,7 @@
 			patientFactory
 				.update(patient)
 				.then(function(patient){
+					console.log(patient);
 					$state.go('confirmation', {id: patient.id});
 				});
 		}

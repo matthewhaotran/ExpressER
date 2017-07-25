@@ -27,7 +27,8 @@
 			visitFactory
 				.update(visit)
 				.then(function(visit) {
-					$state.go('consent', {id: visit.patientId});    
+					console.log(visit);
+					$state.go('consent', {id:visit.patientId});    
 				});
 		}
 	}

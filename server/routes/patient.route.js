@@ -48,7 +48,7 @@ router.post('/', function (req, res) {
 router.put('/:id', function (req, res) {
   db.Patient.findById(req.params.id).then(function (patient) {
     patient.update(req.body).then(function (patient) {
-      res.sendStatus(204);
+      res.json(patient);
     });
   });
 });
