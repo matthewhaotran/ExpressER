@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Doctor Login</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+    <body>
+
+    <md-toolbar class="md-primary" style="padding:25px">
+    <div class="md-toolbar-tools" layout-align="center center">
+      <h1 class="md-flex" style="font-size:45px">Doctor Login</h1>
+    </div>
+  </md-toolbar> 
+ 
+      <div class="padded button" layout layout-align="center center"> 
+        <span>
+        <img src="/images/EspressERLogo.jpg" alt="Our Logo" style="width : 800px">
+    </span>
+ </div>  
+
+<div  layout="column" layout-align="center center" style="padding:100px" ng-cloak>
+  
+  <div layout="column" layout-align="center center">
+    <md-select placeholder="Assign to user" ng-model="user" md-on-open="loadUsers()" style="min-width: 600px;">
+      <md-option ng-value="user" ng-repeat="doctor in doctorLoginCtrl.doctors">{{doctor.lastName}}, {{doctor.firstName}} </md-option>
+    </md-select>
+  </div>
+</div>
+
+    </body>
+</html>
