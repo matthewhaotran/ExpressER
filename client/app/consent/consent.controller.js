@@ -14,6 +14,7 @@
 		activate();
 
 		function activate() {
+			console.log('consent controller ' + $stateParams.id);
 			patientFactory
 				.getById($stateParams.id)
 				.then(function (patient) {
