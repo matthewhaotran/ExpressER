@@ -1,35 +1,33 @@
-<div class="pre-scrollable">
-    <div class="md-padding" ng-cloak style="min-height:270px">
-        <div layout="row" layout-wrap>
 
-            <div flex="100" flex-gt-sm="50" layout="column">
-                <div>
-                    <fieldset class="standard">
-                        <legend>Please Select Your Symptoms</legend>
-                        <div layout="row" layout-wrap flex>
-                            <div flex="50" ng-repeat="symptom in symptomCtrl.symptoms">
-                                <md-checkbox ng-checked="symptomCtrl.exists(description,symptomCtrl.selected)" ng-click="symptomCtrl.toggle( symptom.description,symptomCtrl.selected)">
-                                    {{ symptom.description }} <span ng-if="symptomCtrl.exists(symptom.description, symptomCtrl.selected)"><strong>SELECTED</strong></span>
-                                </md-checkbox>
-                            </div>
-                        </div>
-                    </fieldset>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="pre-scrollable">
+   <div class="md-padding" ng-cloak style="min-height:270px">
+       <div layout="row" layout-wrap>
+
+           <div flex="100" flex-gt-sm="50" layout="column">
+               <div>
+                   <fieldset class="standard">
+                       <legend>Please Select Your Symptoms</legend>
+                       <div layout="row" layout-wrap flex>
+                           <div flex="50" ng-repeat="symptom in symptomCtrl.symptoms">
+                               <md-checkbox ng-checked="symptomCtrl.exists( symptom,symptomCtrl.selected)" ng-click="symptomCtrl.toggle( symptom,symptomCtrl.selected)">
+                                   {{ symptom.description }} <span ng-if="symptomCtrl.exists(symptom.description, symptomCtrl.selected)">selected</span>
+                               </md-checkbox>
+                           </div>
+                       </div>
+                   </fieldset>
+               </div>
+           </div>
+       </div>
+   </div>
 </div>
 <div flex="100">
-    <h2 class="md-title">Selected Symptoms</h2>
+   <h2 class="md-title">Selected Symptoms</h2>
 
-    <pre style="display: block; padding: 8px;" md>{{symptomCtrl.selected}}</pre>
+   <div ng-repeat="symptom in symptomCtrl.selected">
+       {{symptom.description}}
+   </div>
 </div>
-<md-chips ng-model="symptomCtrl.symptom.description" md-removable="symptomctrl.removable" md-max-chips="5"
-    placeholder="Enter a symptom...">
-    <md-chip-template>
-        <strong>{{symptomCtrl}}</strong>
-    </md-chip-template>
-</md-chips>
-</div>
- <md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">Go to Pain Scale</md-button>
-<!-- Break in lines to show changes -->
+<md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">Go to Pain Scale</md-button>
+<pre>
+{{symptomCtrl.selected | json}}
+</pre>
