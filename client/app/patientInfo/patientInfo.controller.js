@@ -31,11 +31,10 @@
                         'insuranceNumber': insurance.insuranceNumber,
                         'patientId': patient.id
                     };
-
                     return insuranceFactory.create(insuranceInfo);
                 })
                 .then(function(insurance) {
-                    $state.go('emergencyContact', {id: patient.id});
+                    $state.go('emergencyContact', {id: insurance.patientId});
                 });            
         }
 
