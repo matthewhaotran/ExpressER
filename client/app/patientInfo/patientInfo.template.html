@@ -40,7 +40,7 @@
                 <label>State</label>
                 <md-select ng-model="patientInfoCtrl.patient.state">
                     <md-option><em>None</em></md-option>
-                    <md-option ng-repeat="state in patientInfoCtrl.states" ng-value="state.abbrev" ng-disabled="$index === 1">
+                    <md-option ng-repeat="state in patientInfoCtrl.states" ng-value="state.abbrev">
                     {{state.abbrev}}
                     </md-option>
                 </md-select>
