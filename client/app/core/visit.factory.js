@@ -48,7 +48,6 @@
 				.post('/api/visit', visit)
 				.then(function (response) {
 					return response.data;
-					console.log(response.data);
 				});
 		}
 
@@ -57,7 +56,7 @@
 				.put('/api/visit/' + visit.id, visit)
 				.then(function (response) {
 					return response.data;
-					console.log(response.data);
+					
 				});
 		}
 

@@ -96,7 +96,10 @@
         <div layout="column">
             <b><u>Reason for Visit</u></b>
             <label>Symptom(s):</label>
-            <p>{{ }}</p>
+            <section layout="row" layout-sm="row" layout-align="left center" layout-wrap>
+            <span class="label label-info" style="margin-left : 2px" ng-repeat="patientSymptom in confirmCtrl.patientSymptoms">{{patientSymptom.symptomId}}</span>
+            </section>
+            <p></p>
             <label>Pain Scale:</label>
             <p>{{confirmCtrl.visit[0].painScale}}</p>
         </div>

@@ -10,9 +10,11 @@
 	function SymptomController($stateParams, $state, symptomFactory, patientFactory, visitFactory, patientSymptomFactory) {
 		var vm = this;
 		vm.selected = [];
+		vm.visitDate = new Date();
 		vm.createSymptom = createSymptom;
 		vm.visit = {
-			patientId: $stateParams.id
+			patientId: $stateParams.id,
+			signInTime: vm.visitDate
 		};
 		vm.patientSymptom = {};
 
@@ -49,6 +51,7 @@
 		};
 
 		function createSymptom(visit, patientSymptom) {
+			console.log(visit)
 			visitFactory
 				.create(visit)
 				.then(function (visit) {
@@ -67,9 +70,8 @@
 								vm.patientSymptom = patientSymptom;
 							});
 					}
-
 					$state.go('painScale', {
-						id: patientSymptom.visitId
+						id: visit.id
 					});
 				});
 
