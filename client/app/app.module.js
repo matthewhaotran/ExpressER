@@ -54,7 +54,7 @@
 		});
 
 		$stateProvider.state('consent', {
-			url: '/consent?id',
+			url: '/consent?state',
 			controller: 'ConsentController as consentCtrl',
 			templateUrl: 'app/consent/consent.template.html'
 		});
@@ -68,7 +68,7 @@
 		});
 
 		$stateProvider.state('confirmation', {
-			url: '/confirmation?id',
+			url: '/confirmation?state2',
 			controller: 'ConfirmationController as confirmCtrl',
 			templateUrl: 'app/confirmation/confirmation.template.html'
 		});

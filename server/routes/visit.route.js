@@ -24,8 +24,29 @@ router.get('/', function (request, response) {
   });
 });
 
-router.get('/:id', function (request, response) {
-  db.Visit.findById(request.params.id).then(function (visit) {
+router.get ('/:id', function (request, response) {
+  db.Visit
+  .findById(request.params.id, {
+    include: [{
+      model:db.Patient,
+      as: 'patient',
+      include: [{
+        model: db.EmergencyContact,
+        as: 'emergencyContacts'
+      }, {
+        model: db.Insurance,
+        as: 'insurances'
+      }]
+    }, {
+      model: db.PatientSymptom,
+      as: 'patientSymptoms',
+      include : [{
+        model: db.Symptom,
+        as: 'symptom'
+      }]
+    }]
+  })
+  .then(function(visit){
     if (visit === null) {
       response.sendStatus(404);
     } else {
@@ -33,6 +54,15 @@ router.get('/:id', function (request, response) {
     }
   });
 });
+// router.get('/:id', function (request, response) {
+//   db.Visit.findById(request.params.id).then(function (visit) {
+//     if (visit === null) {
+//       response.sendStatus(404);
+//     } else {
+//       response.json(visit);
+//     }
+//   });
+// });
 
 //Get visit by patientId
 router.get('/:id/patient', function (req, res) {

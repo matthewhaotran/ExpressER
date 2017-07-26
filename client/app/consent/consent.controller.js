@@ -14,9 +14,8 @@
 		activate();
 
 		function activate() {
-			console.log('consent controller ' + $stateParams.id);
 			patientFactory
-				.getById($stateParams.id)
+				.getById($stateParams.state[1])
 				.then(function (patient) {
 					vm.patient = patient;
 				});
@@ -27,8 +26,8 @@
 			patientFactory
 				.update(patient)
 				.then(function(patient){
-					console.log(patient);
-					$state.go('confirmation', {id: patient.id});
+					$state.go('confirmation', {state2: [ $stateParams.state[0], patient.id, 'BADMFER!']});
+					//
 				});
 		}
 	}
