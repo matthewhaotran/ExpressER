@@ -19,8 +19,6 @@
                 .then(function (doctors) {
                     vm.doctors = doctors;
                 });
-
-
         }
     }
 })();
