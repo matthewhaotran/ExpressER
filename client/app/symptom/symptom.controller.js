@@ -51,7 +51,6 @@
 		};
 
 		function createSymptom(visit, patientSymptom) {
-			console.log(visit)
 			visitFactory
 				.create(visit)
 				.then(function (visit) {

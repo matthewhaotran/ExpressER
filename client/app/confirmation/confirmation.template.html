@@ -10,63 +10,63 @@
         <div layout="row">
             <div flex="33">
                 <label>First Name:</label>
-                <p>{{confirmCtrl.patient.firstName}}</p>
+                <p>{{confirmCtrl.visit.patient.firstName}}</p>
             </div>
             <div flex="33">
                 <label>Middle Name:</label>
-                <p>{{confirmCtrl.patient.middleName}}</p>
+                <p>{{confirmCtrl.visit.patient.middleName}}</p>
             </div>
             <div flex="33">
                 <label>Last Name:</label>
-                <p>{{confirmCtrl.patient.lastName}}</p>
+                <p>{{confirmCtrl.visit.patient.lastName}}</p>
             </div>
         </div>
         <div layout="row">
             <div flex="33">
                 <label>Date of Birth:</label>
-                <p>{{confirmCtrl.patient.dob}}</p>
+                <p>{{confirmCtrl.visit.patient.dob}}</p>
             </div>
             <div flex="33">
                 <label>Social Security Number:</label>
-                <p>{{confirmCtrl.patient.ssn}}</p>
+                <p>{{confirmCtrl.visit.patient.ssn}}</p>
             </div>
         </div>
         <div layout="row">
             <div flex="33">
                 <label>Address1:</label>
-                <p>{{confirmCtrl.patient.address1}}</p>
+                <p>{{confirmCtrl.visit.patient.address1}}</p>
             </div>
             <div flex="33">
                 <label>Address2:</label>
-                <p>{{confirmCtrl.patient.address2}}</p>
+                <p>{{confirmCtrl.visit.patient.address2}}</p>
             </div>
         </div>
         <div layout="row">
             <div flex="33">
                 <label>City:</label>
-                <p>{{confirmCtrl.patient.city}}</p>
+                <p>{{confirmCtrl.visit.patient.city}}</p>
             </div>
             <div flex="33">
                 <label>State:</label>
-                <p>{{confirmCtrl.patient.state}}</p>
+                <p>{{confirmCtrl.visit.patient.state}}</p>
             </div>
             <div flex="33">
                 <label>ZIP:</label>
-                <p>{{confirmCtrl.patient.zip}}</p>
+                <p>{{confirmCtrl.visit.patient.zip}}</p>
             </div>
         </div>
         <div layout="row">
             <div flex="33">
                 <label>Mobile Phone:</label>
-                <p>{{confirmCtrl.patient.mobilePhone}}</p>
+                <p>{{confirmCtrl.visit.patient.mobilePhone}}</p>
             </div>
             <div flex="33">
                 <label>Home Phone:</label
-                    <p>{{confirmCtrl.patient.homePhone}}</p>
+                    <p>{{confirmCtrl.visit.patient.homePhone}}</p>
                     </div>
                 <div flex="33">
                     <label>Work Phone:</label>
-                <p>{{confirmCtrl.patient.workPhone}}</p>
+                <p>{{confirmCtrl.visit.patient.workPhone}}</p>
             </div>
         </div>
 
@@ -74,7 +74,7 @@
         <div layout="column">
             <label><b><u>Emergency Contact</u></b></label>
         </div>
-        <div ng-repeat="emergencyContact in confirmCtrl.emergencyContacts">
+        <div ng-repeat="emergencyContact in confirmCtrl.visit.patient.emergencyContacts">
             <div layout="row">
                 <div flex="33">
                     <label>First Name:</label>
@@ -97,11 +97,14 @@
             <b><u>Reason for Visit</u></b>
             <label>Symptom(s):</label>
             <section layout="row" layout-sm="row" layout-align="left center" layout-wrap>
-            <span class="label label-info" style="margin-left : 2px" ng-repeat="patientSymptom in confirmCtrl.patientSymptoms">{{patientSymptom.symptomId}}</span>
+            <span 
+                class="label label-info" style="margin-left : 2px" 
+                ng-repeat="patientSymptom in confirmCtrl.visit.patientSymptoms">{{patientSymptom.symptom.name}}
+            </span>
             </section>
             <p></p>
             <label>Pain Scale:</label>
-            <p>{{confirmCtrl.visit[0].painScale}}</p>
+            <p>{{confirmCtrl.visit.painScale}}</p>
         </div>
         <section layout="row" layout-sm="row" layout-align="center center" layout-wrap>
             <md-button class="md-raised md-gray">Edit</md-button>
