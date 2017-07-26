@@ -5,12 +5,14 @@
         .module('app.doctorIncomingPatient')
         .controller('DoctorIncomingPatientController', DoctorIncomingPatientController)
 
-    DoctorIncomingPatientController.$inject = ['doctorFactory','patientFactory','visitFactory','$state'];
+    DoctorIncomingPatientController.$inject = ['doctorFactory','patientFactory','visitFactory','$state', '$stateParams'];
 
-    function DoctorIncomingPatientController(doctorFactory,patientFactory,visitFactory, $state) {
+    function DoctorIncomingPatientController(doctorFactory,patientFactory,visitFactory, $state, $stateParams) {
         
         var vm = this;
-        vm.acceptPatient = acceptPatient;
+        vm.checkInPatient = checkInPatient;
+        vm.checkOutPatient = checkOutPatient;
+        vm.myFilter = myFilter;
 
         activate();
 
@@ -27,10 +29,25 @@
                         });
                 })
                 
-            
+            doctorFactory
+                .getById($stateParams.id)
+                .then(function(doctor) {
+                    vm.doctor = doctor;
+                });
         }
 
-        function acceptPatient(visit) {
+        function checkInPatient(visit) {
+            visit.checkInTime = Date.now();
+            visit.doctorId = $stateParams.id;
+            
+            visitFactory
+                .update(visit)
+                .then(function(visit) {
+                    $state.reload();
+                })
+        }
+
+        function checkOutPatient(visit) {
             visit.checkOutTime = Date.now();
             
             visitFactory
@@ -38,6 +55,10 @@
                 .then(function(visit) {
                     $state.reload();
                 })
+        }
+
+        function myFilter (firstName) {
+            return firstName === 'Joe';
         }
     }
 })();
