@@ -14,6 +14,9 @@ router.get('/', function (request, response) {
         model: db.Symptom,
         as: 'symptom'
       }]
+    }, {
+      model: db.Doctor,
+      as: 'doctor'
     }]
   })
   promise.then(function (visits) {
