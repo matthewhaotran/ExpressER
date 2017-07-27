@@ -1,7 +1,7 @@
 (function () {
 	'use strict';
 
-	angular.module('app.doctorIncomingPatient', [
+	angular.module('app.activePatientsList', [
 		// Angular modules
 
 		// Custom modules

@@ -17,4 +17,7 @@ body {
 
 .sm-warn { 
   margin-left: 10px;
+
+#symptomglancebox {
+  height: 299px;
 }
