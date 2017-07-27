@@ -14,3 +14,7 @@ body {
     max-height: 700px;
     overflow-y: scroll;
 }
+
+.sm-warn { 
+  margin-left: 10px;
+}
