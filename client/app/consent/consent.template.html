@@ -118,11 +118,6 @@
                     Consent to Give Care
                 </md-checkbox>
 
-                <md-checkbox ng-model="consentCtrl.discloseHealth" aria-label="Checkbox 2" ng-true-value="true" ng-false-value="false" class="md-warn md-align-top-left"
-                    flex>
-                    Use and Disclosure of Health Information
-                </md-checkbox>
-
                 <md-checkbox ng-model="consentCtrl.patient.consentForText" aria-label="Checkbox 3" ng-true-value="true" ng-false-value="false" class="md-warn md-align-top-left"
                     flex>
                     Communication Preferences
@@ -131,4 +126,4 @@
         </div>
 
         <md-button class="md-raised md-warn" ng-click="consentCtrl.addConsent(consentCtrl.patient)">Go to Confirmation</md-button>
-        <pre>{{consentCtrl | json}}</pre>
+   

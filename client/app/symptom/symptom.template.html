@@ -1,33 +1,32 @@
 
-<div class="pre-scrollable">
-   <div class="md-padding" ng-cloak style="min-height:270px">
-       <div layout="row" layout-wrap>
+        <div layout="column" layout-padding ng-cloak>
 
-           <div flex="100" flex-gt-sm="50" layout="column">
-               <div>
-                   <fieldset class="standard">
-                       <legend>Please Select Your Symptoms</legend>
-                       <div layout="row" layout-wrap flex>
-                           <div flex="50" ng-repeat="symptom in symptomCtrl.symptoms">
-                               <md-checkbox ng-checked="symptomCtrl.exists( symptom,symptomCtrl.selected)" ng-click="symptomCtrl.toggle( symptom,symptomCtrl.selected)">
-                                   {{ symptom.description }} <span ng-if="symptomCtrl.exists(symptom.description, symptomCtrl.selected)">selected</span>
-                               </md-checkbox>
-                           </div>
-                       </div>
-                   </fieldset>
-               </div>
-           </div>
-       </div>
-   </div>
-</div>
-<div flex="100">
-   <h2 class="md-title">Selected Symptoms</h2>
+            <div flex="100" flex-gt-sm="50" layout="column">
 
-   <div ng-repeat="symptom in symptomCtrl.selected">
-       {{symptom.description}}
-   </div>
-</div>
-<md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">Go to Pain Scale</md-button>
-<pre>
-{{symptomCtrl.selected | json}}
-</pre>
+                <div>
+                    <fieldset class="standard">
+                        <legend>Please Select Your Symptoms</legend>
+                        <div layout="row" layout-wrap flex>
+                            <div flex="50" ng-repeat="symptom in symptomCtrl.symptoms">
+                                <md-checkbox ng-checked="symptomCtrl.exists( symptom,symptomCtrl.selected)" ng-click="symptomCtrl.toggle( symptom,symptomCtrl.selected)">
+                                    {{ symptom.description }} <span ng-if="symptomCtrl.exists(symptom.description, symptomCtrl.selected)">selected</span>
+                                </md-checkbox>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div flex="100">
+                    <h2 class="md-title">Selected Symptoms</h2>
+
+                    <div ng-repeat="symptom in symptomCtrl.selected">
+                        {{symptom.description}}
+                    </div>
+                </div>
+
+                <md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">Go to Pain Scale</md-button>
+
+            </div>
+        </div>
+
+
