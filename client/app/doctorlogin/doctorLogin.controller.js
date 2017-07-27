@@ -1,9 +1,9 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.doctorLogin')
-        .controller('DoctorLoginController', DoctorLoginController);
+	angular
+		.module('app.doctorLogin')
+		.controller('DoctorLoginController', DoctorLoginController);
 
     DoctorLoginController.$inject = ['$stateParams', '$state', 'doctorFactory'];
 
@@ -12,7 +12,7 @@
         var vm = this;
         vm.goToIncPat = goToIncPat;
 
-        activate();
+		activate();
 
         function activate() {
             doctorFactory

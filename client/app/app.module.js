@@ -17,6 +17,8 @@
 		'app.symptom',
 		'app.doctorLogin',
 		'app.doctorIncomingPatient',
+		'app.doctorGlance',
+		'app.activePatientsList',
 
 		// 3rd Party Modules
 		'ui.router'
@@ -93,6 +95,20 @@
 			url: '/doctorIncomingPatient?id',
 			controller: 'DoctorIncomingPatientController as doctorIncomingPatientCtrl',
 			templateUrl: 'app/doctorIncomingPatient/doctorIncomingPatient.template.html'
+		});
+
+		$stateProvider.state('doctorGlance', {
+
+			url: '/doctorGlance?id',
+			controller: 'DoctorGlanceController as doctorGlanceCtrl',
+			templateUrl: 'app/doctorGlance/doctorGlance.template.html'
+		});
+
+		$stateProvider.state('activePatientsList', {
+
+			url: '/activePatientsList?id',
+			controller: 'ActivePatientsListController as activePatientsListCtrl',
+			templateUrl: 'app/activePatientsList/activePatientsList.template.html'
 		});
 	}
 })();
