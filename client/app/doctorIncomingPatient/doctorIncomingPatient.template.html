@@ -1,8 +1,10 @@
-<h1 class="text-center">Incoming Patients</h1>
+<div class="row">
+    <h1 class="text-center">Incoming Patients</h1>
+</div>
+
 <hr>
 
 <div class="container pre-scrollable">
-
 
     <table class="table table-striped">
         <thead>
@@ -23,7 +25,11 @@
         </tbody>
     </table>
 
-    
+    <div class="row">
+        <p class="pull-left">
+            <strong>Logged in as: </strong>{{doctorIncomingPatientCtrl.doctor.firstName}} {{doctorIncomingPatientCtrl.doctor.lastName}}
+            <small><a ui-sref="doctorLogin">(logout)</a></small>
+        </p>
+    </div>
+
 </div>
-
-
