@@ -1,0 +1,40 @@
+<div class="container">
+
+    <div class="jumbotron">
+        <h1>Current Patient</h1>
+    </div>
+
+<div class="row">
+    <div class="col-md-4">
+        <div class="well">
+            <p><strong>Patient Name: </strong> {{doctorGlanceCtrl.visit.patient.firstName}}  {{doctorGlanceCtrl.visit.patient.lastName}}</p>
+        </div>
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+        <div class="well">
+            <p><strong>Check-in Time: </strong> {{doctorGlanceCtrl.visit.checkInTime | date:"h:mma"}}</p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <button class="btn btn-primary" ng-click="doctorGlanceCtrl.checkOutPatient(doctorGlanceCtrl.visit)">Check-Out Patient</button>
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<pre>
+{{doctorGlanceCtrl | json}}
+</pre>

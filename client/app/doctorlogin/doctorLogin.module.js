@@ -1,7 +1,7 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular.module('app.doctorLogin', [
+	angular.module('app.doctorLogin', [
 
-    ]);
+	]);
 })();

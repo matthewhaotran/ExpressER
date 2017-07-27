@@ -1,24 +1,24 @@
 (function () {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.doctorLogin')
-        .controller('DoctorLoginController', DoctorLoginController);
+	angular
+		.module('app.doctorLogin')
+		.controller('DoctorLoginController', DoctorLoginController);
 
-    DoctorLoginController.$inject = ['doctorFactory'];
+	DoctorLoginController.$inject = ['doctorFactory'];
 
-    function DoctorLoginController(doctorFactory) {
+	function DoctorLoginController(doctorFactory) {
 
-        var vm = this;
+		var vm = this;
 
-        activate();
+		activate();
 
-        function activate() {
-            doctorFactory
-                .getAll()
-                .then(function (doctors) {
-                    vm.doctors = doctors;
-                });
-        }
-    }
+		function activate() {
+			doctorFactory
+				.getAll()
+				.then(function (doctors) {
+					vm.doctors = doctors;
+				});
+		}
+	}
 })();
