@@ -1,0 +1,22 @@
+<table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Patient Name</th>
+                <th>Checked In Time</th>
+                <th>Assigned Doctor</th>
+                <th width="4%">Checkout Patient</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="visit in activePatientsListCtrl.visits | filter: {checkOutTime: null, checkInTime: ''}">
+                <th>{{visit.patient.firstName || 'Anonymous'}} {{visit.patient.lastName}}</th>
+                <th>{{visit.checkInTime | date:"h:mma"}}</th>
+                <th>{{visit.doctor.lastName || 'Unknown Doctor'}}</th>
+                <th width="4%"><button class="btn btn-success" ng-click="activePatientsListCtrl.openGlanceView(visit)"><i class="fa fa-clipboard"></i></button></th>
+            </tr>
+        </tbody>
+    </table>
+
+    <pre>
+    {{activePatientsListCtrl | json}}
+    </pre>
