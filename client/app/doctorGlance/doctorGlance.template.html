@@ -1,40 +1,62 @@
-<div class="container">
+<h2>Patient: {{doctorGlanceCtrl.visit.patient.firstName}} {{doctorGlanceCtrl.visit.patient.lastName}}</h2>
+<hr>
 
-    <div class="jumbotron">
-        <h1>Current Patient</h1>
+<div class="row text-center">
+
+    <div class="col-sm-4">
+        <div class="well">
+            <p><strong>Name</strong></p>
+            <p>{{doctorGlanceCtrl.visit.patient.firstName}} {{doctorGlanceCtrl.visit.patient.lastName}}</p>
+        </div>
     </div>
+
+    <div class="col-sm-4">
+        <div class="well">
+            <p><strong>DOB</strong></p>
+            <p>{{doctorGlanceCtrl.visit.patient.dob | date}}</p>
+        </div>
+    </div>
+
+    <div class="col-sm-4">
+        <div class="well">
+            <p><strong>Check-in Time</strong></p>
+            <p>{{doctorGlanceCtrl.visit.checkInTime | date:"h:mma"}}</p>
+        </div>
+    </div>
+
+</div>
+
+<hr>
 
 <div class="row">
-    <div class="col-md-4">
-        <div class="well">
-            <p><strong>Patient Name: </strong> {{doctorGlanceCtrl.visit.patient.firstName}}  {{doctorGlanceCtrl.visit.patient.lastName}}</p>
+
+    <div class="col-sm-4">
+        <div class="well text-left" id="symptomglancebox">
+            <h4>Symptoms</h4>
+            <ul>
+                <li ng-repeat="patientSymptom in doctorGlanceCtrl.visit.patientSymptoms">{{patientSymptom.symptom.name}}</li>
+            </ul>
         </div>
     </div>
-    <div class="col-md-4 col-md-offset-4">
-        <div class="well">
-            <p><strong>Check-in Time: </strong> {{doctorGlanceCtrl.visit.checkInTime | date:"h:mma"}}</p>
+
+    <div class="col-sm-8">
+        <div class="well text-center">
+            <div class="row">
+                <h4>Notes</h4>
+                <textarea rows="8" cols="40" ng-model="doctorGlanceCtrl.visit.note"></textarea>
+            </div>
+            <br>
+            <md-button class="md-raised md-primary md-hue-2" ng-click="doctorGlanceCtrl.addNote(doctorGlanceCtrl.visit)">Add Note</md-button>
         </div>
     </div>
-</div>
-
-<div>
-    <button class="btn btn-primary" ng-click="doctorGlanceCtrl.checkOutPatient(doctorGlanceCtrl.visit)">Check-Out Patient</button>
-</div>
-
-
-
-
 
 </div>
 
+<div class="row">
 
+</div>
 
-
-
-
-
-
-
-<pre>
-{{doctorGlanceCtrl | json}}
-</pre>
+<div class="row text-center">
+    <md-button class="md-raised md-primary" ng-click="doctorGlanceCtrl.goToActivePatientsList(doctorGlanceCtrl.visit)">Go to Active Patients</md-button>
+    <md-button class="md-raised md-warn" ng-click="doctorGlanceCtrl.checkOutPatient(doctorGlanceCtrl.visit)">Checkout-Patient</md-button>
+</div>
