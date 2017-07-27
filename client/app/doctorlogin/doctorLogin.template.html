@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<title>Doctor Login</title>
 
-<head>
-  <title>Doctor Login</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="css/style.css" rel="stylesheet">
-</head>
 
 <body>
 
@@ -38,8 +31,9 @@
   </div>
 
   <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
-    <md-button class="md-raised md-primary"ng-click="doctorLoginCtrl.save(doctorLoginCtrl.doctor, patientInfoCtrl.)">Select</md-button>
+    <md-button class="md-raised md-primary"ng-click='doctorLoginCtrl.goToIncPat(doctor)'>Select</md-button>
   </section>
 </body>
+<pre>{{doctorLoginCtrl | json}}</pre>
 
-</html>
+
