@@ -23,7 +23,7 @@
             <input ng-model="searchTerm" type="search" placeholder="Enter by Last Name.." class="demo-header-searchbox md-text" style="min-width: 600px">
           </md-select-header>
           <md-optgroup label="doctors">
-          <md-option ng-value="doctor" ng-repeat="doctor in doctorLoginCtrl.doctors|filter:searchTerm">{{doctor.lastName}}, {{doctor.firstName}}</md-option>
+          <md-option ng-value="doctor" ng-repeat="doctor in doctorLoginCtrl.doctors | orderBy: 'lastName'">{{doctor.lastName}}, {{doctor.firstName}}</md-option>
           </md-optgroup>
         </md-select>
       </md-input-container>
