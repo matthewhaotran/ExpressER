@@ -26,7 +26,7 @@
         //function activate() {}
 
         function save(patient, insurance) {
-            
+
                 patientFactory
                     .create(patient)
                     .then(function (patient) {
