@@ -22,9 +22,10 @@
 				});
 		}
 
-		function text(number) {
+		function text(visit) {
+			
 			twilioFactory
-				.sendText(number)
+				.sendText(visit)
 				.then(function () {
 					alert('Text Sent');
 				});
