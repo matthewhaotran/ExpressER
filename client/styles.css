@@ -21,3 +21,7 @@ body {
 #symptomglancebox {
   height: 299px;
 }
+
+.Card {
+  background-color:lightgrey;
+}

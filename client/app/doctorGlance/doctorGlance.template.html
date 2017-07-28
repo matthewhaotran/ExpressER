@@ -1,62 +1,108 @@
-<h2>Patient: {{doctorGlanceCtrl.visit.patient.firstName}} {{doctorGlanceCtrl.visit.patient.lastName}}</h2>
-<hr>
-
-<div class="row text-center">
-
-    <div class="col-sm-4">
-        <div class="well">
-            <p><strong>Name</strong></p>
-            <p>{{doctorGlanceCtrl.visit.patient.firstName}} {{doctorGlanceCtrl.visit.patient.lastName}}</p>
+<div class="pre-scrollable">
+    <md-toolbar class="md-primary">
+        <div class="md-toolbar-tools">
+            <h2 class="md-flex md-title">Patient: <strong>{{doctorGlanceCtrl.visit.patient.firstName}} {{doctorGlanceCtrl.visit.patient.lastName}}</strong></h2>
         </div>
+    </md-toolbar>
+    <hr>
+
+    <div class="row text-center">
+
+        <div class="col-sm-4">
+
+            <md-card class="Card">
+                <md-card-title>
+                    <md-card-title-text>
+                        <br>
+                        <span class="md-headline text-center">120/80</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media">
+                            <br>
+                            <p>Blood Pressure</p>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+            </md-card>
+        </div>
+
+        <div class="col-sm-4">
+            <md-card class="Card">
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline text-center">{{doctorGlanceCtrl.visit.patient.dob | date}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media">
+                            <br>
+                            <p>DOB</p>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+            </md-card>
+        </div>
+
+        <div class="col-sm-4">
+             <md-card class="Card">
+                <md-card-title>
+                    <md-card-title-text>
+                        <br>
+                        <span class="md-headline text-center">{{doctorGlanceCtrl.visit.checkInTime | date:"h:mma"}}</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+                        <div class="md-media-sm card-media">
+                            <br>
+                            <p>Check-in Time</p>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
+            </md-card>
+        </div>
+
     </div>
 
-    <div class="col-sm-4">
-        <div class="well">
-            <p><strong>DOB</strong></p>
-            <p>{{doctorGlanceCtrl.visit.patient.dob | date}}</p>
-        </div>
-    </div>
+    <hr>
 
-    <div class="col-sm-4">
-        <div class="well">
-            <p><strong>Check-in Time</strong></p>
-            <p>{{doctorGlanceCtrl.visit.checkInTime | date:"h:mma"}}</p>
-        </div>
-    </div>
+    <div class="row">
 
-</div>
+        <div class="col-sm-4">
+            <md-toolbar class="md-primary">
+                <div flex="100" class="text-left" id="symptomglancebox">
+                    <div class="md-toolbar-tools">
+                        <h4 class="md-title">Symptoms</h4>
+                    </div>
+                </div>
 
-<hr>
-
-<div class="row">
-
-    <div class="col-sm-4">
-        <div class="well text-left" id="symptomglancebox">
-            <h4>Symptoms</h4>
-            <ul>
-                <li ng-repeat="patientSymptom in doctorGlanceCtrl.visit.patientSymptoms">{{patientSymptom.symptom.name}}</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="col-sm-8">
-        <div class="well text-center">
-            <div class="row">
-                <h4>Notes</h4>
-                <textarea rows="8" cols="40" ng-model="doctorGlanceCtrl.visit.note"></textarea>
+            </md-toolbar>
+            <div class="md-display-1 md-raised md-primary" md-button class="md-raised md-primary" ng-repeat="patientSymptom in doctorGlanceCtrl.visit.patientSymptoms">
+                {{patientSymptom.symptom.name}}
             </div>
-            <br>
+        </div>
+
+
+        <div class="col-sm-8">
+            <div class="text-center">
+                <md-toolbar class="md-primary">
+                    <div class="md-toolbar-tools">
+                        <h4>Notes</h4>
+                    </div>
+                </md-toolbar>
+                <br>
+                <textarea rows="8" cols="40" style="border:solid 1px black" ng-model="doctorGlanceCtrl.visit.note"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-offset-7">
             <md-button class="md-raised md-primary md-hue-2" ng-click="doctorGlanceCtrl.addNote(doctorGlanceCtrl.visit)">Add Note</md-button>
         </div>
     </div>
 
-</div>
+    <hr>
 
-<div class="row">
-
-</div>
-
-<div class="row text-center">
-    <md-button class="md-raised md-primary" ng-click="doctorGlanceCtrl.goToActivePatientsList(doctorGlanceCtrl.visit)">Go to Active Patients</md-button>
-    <md-button class="md-raised md-warn" ng-click="doctorGlanceCtrl.checkOutPatient(doctorGlanceCtrl.visit)">Checkout-Patient</md-button>
+    <div class="row text-center">
+        <md-button class="md-raised md-primary md-hue-2" ng-click="doctorGlanceCtrl.goToActivePatientsList(doctorGlanceCtrl.visit)">Go to Active Patients  <i class="fa fa-users" aria-hidden="true"></i></md-button>
+        <md-button class="md-raised md-warn" ng-click="doctorGlanceCtrl.checkOutPatient(doctorGlanceCtrl.visit)">Checkout-Patient</md-button>
+    </div>
 </div>
