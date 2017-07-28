@@ -27,6 +27,7 @@
 				.getAll()
 				.then(function (symptoms) {
 					vm.symptoms = symptoms;
+					
 				});
 
 			patientFactory

@@ -19,12 +19,12 @@
                 <div flex="100">
                     <h2 class="md-title">Selected Symptoms</h2>
 
-                    <div ng-repeat="symptom in symptomCtrl.selected">
+                    <div class="md-display-1 md-raised md-primary" md-button class="md-raised md-primary" ng-repeat="symptom in symptomCtrl.selected">
                         {{symptom.description}}
                     </div>
                 </div>
 
-                <md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">Go to Pain Scale</md-button>
+                <md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">Next</md-button>
 
             </div>
         </div>
