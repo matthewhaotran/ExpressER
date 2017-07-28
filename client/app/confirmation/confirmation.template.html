@@ -149,6 +149,13 @@
         </section>
     </div>
 
+    <md-button class="md-raised md-warn" ui-sref="success">Go to Success Page</md-button>
+
+    <button class="btn btn-primary" ng-click="confirmCtrl.text()">
+        test send text msg!
+    </button>
+
+
 <!-- modal html -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
@@ -167,6 +174,6 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-    
+
     <pre>{{confirmCtrl | json}}</pre>
     

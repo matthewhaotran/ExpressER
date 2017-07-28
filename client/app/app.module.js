@@ -19,6 +19,7 @@
 		'app.doctorIncomingPatient',
 		'app.doctorGlance',
 		'app.activePatientsList',
+		'app.twilio',
 
 		// 3rd Party Modules
 		'ui.router'
