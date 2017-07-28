@@ -10,6 +10,10 @@ const allergyInfoRoute = require('./routes/allergyInfo.route');
 const symptomRoute = require('./routes/symptom.route');
 const specialtyRoute = require('./routes/specialty.route');
 const visitRoute = require('./routes/visit.route');
+const twilioRoute = require('./routes/twilio.route');
+
+
+
 
 
 const db = require('./models');
@@ -29,6 +33,7 @@ app.use('/api/insurance', insuranceRoute);
 app.use('/api/emergencyContact', emergencyContactRoute);
 app.use('/api/specialty', specialtyRoute);
 app.use('/api/visit', visitRoute);
+app.use('/api/twilio', twilioRoute);
 
 app.get('/', (req, res) => {
   res.sendFile(`${__dirname}/../dist/index.html`);

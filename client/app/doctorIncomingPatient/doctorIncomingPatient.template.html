@@ -1,8 +1,10 @@
-<h1 class="text-center">Incoming Patients</h1>
+<div class="row">
+    <h1 class="text-center">Incoming Patients</h1>
+</div>
+
 <hr>
 
 <div class="container pre-scrollable">
-
 
     <table class="table table-striped">
         <thead>
@@ -14,7 +16,7 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="visit in doctorIncomingPatientCtrl.visits | filter: {checkInTime: null}">
+            <tr ng-repeat="visit in doctorIncomingPatientCtrl.visits | filter: {checkInTime: null} | orderBy: '-patientSymptoms[0].symptomId'">
                 <th>{{visit.patient.firstName || 'Anonymous'}} {{visit.patient.lastName}}</th>
                 <th>{{visit.patientSymptoms[0].symptom.description || 'Not inputted'}}</th>
                 <th>{{visit.signInTime | date:"h:mma"}}</th>
@@ -23,7 +25,12 @@
         </tbody>
     </table>
 
-    
-</div>
+    <div class="row">
+        <p class="pull-left">
+            <strong>Logged in as: </strong>{{doctorIncomingPatientCtrl.doctor.firstName}} {{doctorIncomingPatientCtrl.doctor.lastName}}
+            <small><a ui-sref="doctorLogin">(logout)</a></small>
+        </p>
+    </div>
 
+</div>
 

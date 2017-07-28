@@ -5,12 +5,13 @@
 		.module('app.confirmation')
 		.controller('ConfirmationController', ConfirmationController);
 
-	ConfirmationController.$inject = ['$stateParams', '$state', 'patientFactory', 'visitFactory', 'symptomFactory'];
+	ConfirmationController.$inject = ['$stateParams', '$state', 'patientFactory', 'visitFactory', 'symptomFactory', 'twilioFactory'];
 
-	function ConfirmationController($stateParams, $state, patientFactory, visitFactory, symptomFactory) {
+	function ConfirmationController($stateParams, $state, patientFactory, visitFactory, symptomFactory, twilioFactory) {
 		/* jshint validthis:true */
 		var vm = this;
 		vm.selected = [];
+    vm.text = text;
 
 		activate();
 
@@ -18,7 +19,7 @@
 
 			visitFactory
 				.getById($stateParams.state2[0])
-				.then(function(visit){
+				.then(function (visit) {
 					vm.visit = visit;
 					vm.selected = visit.patientSymptoms;
 					console.log(vm.selected);
@@ -47,5 +48,13 @@
 			//console.log(list.indexOf(symptom));
 			return list.indexOf(symptom) > -1;
 		};
+
+		function text(number) {
+			twilioFactory
+				.sendText(number)
+				.then(function () {
+					alert('Text Sent');
+				});
+		}
 	}
 })();
