@@ -2,7 +2,7 @@
     <div>
         <md-toolbar class="md-indigo">
             <div class="md-toolbar-tools">
-                <md-truncate flex>Please Confirm Information</md-truncate>
+                <h1 style="text-align: center; margin-top: 1em">Confirm Information</h1>
         </md-toolbar>
         </div>
     </div>
@@ -148,12 +148,7 @@
         </section>
     </div>
 
-    <md-button class="md-raised md-warn" ui-sref="success">Go to Success Page</md-button>
-
-    <button class="btn btn-primary" ng-click="confirmCtrl.text(confirmCtrl.visit)">
-        test send text msg!
-    </button>
-
+    <md-button class="md-raised md-warn" ng-click="confirmCtrl.text(confirmCtrl.visit)" ui-sref="success">Go to Success Page</md-button>
 
 <!-- modal html -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -169,12 +164,15 @@
             <div flex="100" flex-gt-sm="50" layout="column">
 
                 <div>
+                    <pre>{{confirmCtrl.selected | json}}</pre>
                     <fieldset class="standard">
                         <legend>Please Select Your Symptoms</legend>
                         <div layout="row" layout-wrap flex>
                             <div flex="50" ng-repeat="symptom in confirmCtrl.symptoms">
-                                <md-checkbox ng-checked="symptomCtrl.exists(symptom, confirmCtrl.selected)" ng-click="confirmCtrl.toggle(symptom, confirmCtrl.selected)">
-                                    {{symptom.description }}-{{symptom.id}}-{{confirmCtrl.selected.symptomId | json}} <span ng-if="confirmCtrl.exists(symptom, confirmCtrl.selected)">selected</span>
+                                <md-checkbox 
+                                    ng-model="confirmCtrl.selectedSymptoms[symptom.id]"
+                                    ng-click="confirmCtrl.toggle(symptom, confirmCtrl.selected)">
+                                    {{symptom.description }}<span ng-if="confirmCtrl.selectedSymptoms[symptom.id]">selected</span>
                                 </md-checkbox>
                             </div>
                         </div>

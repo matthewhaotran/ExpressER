@@ -5,7 +5,7 @@
 
                 <div>
                     <fieldset class="standard">
-                        <legend>Please Select Your Symptoms</legend>
+                        <h1 style="text-align: center; margin-bottom: 1em"><center>Select Your Symptoms</center></h1>
                         <div layout="row" layout-wrap flex>
                             <div flex="50" ng-repeat="symptom in symptomCtrl.symptoms">
                                 <md-checkbox ng-checked="symptomCtrl.exists( symptom,symptomCtrl.selected)" ng-click="symptomCtrl.toggle( symptom,symptomCtrl.selected)">
@@ -24,7 +24,7 @@
                     </div>
                 </div>
 
-                <md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">Next</md-button>
+                <md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">NEXT</md-button>
 
             </div>
         </div>
