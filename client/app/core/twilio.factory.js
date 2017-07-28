@@ -14,8 +14,8 @@
 
         return service;
 
-        function sendText(number) { 
-             return $http.post('/api/twilio/sendMessage', number)
+        function sendText(visit) { 
+             return $http.post('/api/twilio/sendMessage', visit)
             .then(res => res.data);
         }
 

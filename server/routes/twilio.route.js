@@ -8,13 +8,16 @@ const twilioClient = new Twilio(accountSid, authToken);
 const db = require('../models');
 
 router.post('/sendMessage', (req, res) => {
+    console.log(req.body);
+    let textNumber = '+1' + req.body.patient.mobilePhone;
+    console.log(textNumber);
     const message = 
     `You have been checked-in! Please have a seat and we will text/call your name when the doctor is ready to see you.`
     twilioClient
         .messages
         .create({
             body: message,
-            to: myPhoneNumber, 
+            to: textNumber, 
             from: '+16192028578' 
         })
         .then(function(message) {
