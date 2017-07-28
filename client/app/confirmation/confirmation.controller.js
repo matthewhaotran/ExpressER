@@ -11,7 +11,8 @@
 		/* jshint validthis:true */
 		var vm = this;
 		vm.selected = [];
-    vm.text = text;
+		vm.selectedSymptoms = {};
+		vm.text = text;
 
 		activate();
 
@@ -22,7 +23,10 @@
 				.then(function (visit) {
 					vm.visit = visit;
 					vm.selected = visit.patientSymptoms;
-					console.log(vm.selected);
+					visit.patientSymptoms.forEach(function(ps) { 
+						vm.selectedSymptoms[ps.symptom.id] = true; 
+				console.log(vm.selected);
+					});
 				});
 
 			symptomFactory
@@ -32,7 +36,7 @@
 					console.log(symptoms);
 				});
 		}
-		
+
 		vm.toggle = function (symptom, list) {
 			var idx = list.indexOf(symptom);
 			//console.log(idx);
@@ -46,11 +50,12 @@
 		vm.exists = function (symptom, list) {
 			//console.log("list.indexOf");
 			//console.log(list.indexOf(symptom));
-			return list.indexOf(symptom) > -1;
+			
+			return list.map(function(L) { return L.id; }).indexOf(symptom.id) > -1;
 		};
 
 		function text(visit) {
-			
+
 			twilioFactory
 				.sendText(visit)
 				.then(function () {
