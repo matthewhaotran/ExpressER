@@ -26,9 +26,6 @@
         //function activate() {}
 
         function save(patient, insurance) {
-            if (patient.mobilePhone.length === 10) {
-                alert('mobile phone is not correct format');
-            } else {
                 patientFactory
                     .create(patient)
                     .then(function (patient) {
@@ -45,7 +42,7 @@
                             id: insurance.patientId
                         });
                     });
-            }
+            
         }
 
 

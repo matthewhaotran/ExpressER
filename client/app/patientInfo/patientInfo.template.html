@@ -10,7 +10,7 @@
         <div layout="row">
             <md-input-container class="md-icon-float md-block input">
                 <label>Patient First Name</label>
-                <input ng-model="patientInfoCtrl.patient.firstName" type="text">
+                <input ng-model="patientInfoCtrl.patient.firstName" type="text" required>
             </md-input-container>
             <md-input-container class="md-icon-float md-block input">
                 <label>Patient Middle Name</label>
@@ -18,7 +18,7 @@
             </md-input-container>
             <md-input-container class="md-icon-float md-block input">
                 <label>Patient Last Name</label>
-                <input ng-model="patientInfoCtrl.patient.lastName" type="text">
+                <input ng-model="patientInfoCtrl.patient.lastName" type="text" required>
             </md-input-container>
         </div>
         <div layout="row">
@@ -53,7 +53,7 @@
         <div layout="row">
             <md-input-container class="md-icon-float md-block input">
                 <label>Mobile Phone Number</label>
-                <input ng-model="patientInfoCtrl.patient.mobilePhone" type="number">
+                <input ng-model="patientInfoCtrl.patient.mobilePhone" type="number" pattern=".{10,10}" placeholder="##########"required>
             </md-input-container>
             <md-input-container class="md-icon-float md-block input">
                 <label>Home Phone Number</label>
