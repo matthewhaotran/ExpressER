@@ -7,112 +7,173 @@
         </div>
     </div>
     <div class="pre-scrollable">
+        <div layout="column ">
+            <div layout="row">
+                <label><b><u>Contact Information</u></b></label>
+                <section layout="row" layout-sm="column" layout-align="start start " layout-wrap>
+                    <label><sm-button ng-click= "editcontact= !editcontact" class="label label-warning sm-warn">Edit</sm-button></label>
+                </section>
+            </div>
+        </div>
         <div layout="row">
             <div flex="33">
                 <label>First Name:</label>
-                <p>{{confirmCtrl.visit.patient.firstName}}</p>
+                <p ng-show="editcontact"><input type="text" ng-model="confirmCtrl.visit.patient.firstName"></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.firstName}}</p>
             </div>
             <div flex="33">
                 <label>Middle Name:</label>
-                <p>{{confirmCtrl.visit.patient.middleName}}</p>
+                <p ng-show="editcontact"><input type="text" ng-model="confirmCtrl.visit.patient.middleName"></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.middleName}}</p>
             </div>
             <div flex="33">
                 <label>Last Name:</label>
-                <p>{{confirmCtrl.visit.patient.lastName}}</p>
+                <p ng-show="editcontact"><input type="text" ng-model="confirmCtrl.visit.patient.lastName"></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.lastName}}</p>
             </div>
         </div>
-        <div layout="row">
-            <div flex="33">
+        <div layout="row ">
+            <div flex="33 ">
                 <label>Date of Birth:</label>
-                <p>{{confirmCtrl.visit.patient.dob}}</p>
+                <p ng-show="editcontact"><input type="date " ng-model="confirmCtrl.visit.patient.dob "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.dob | date:'longDate'}}</p>
             </div>
-            <div flex="33">
+            <div flex="33 ">
                 <label>Social Security Number:</label>
-                <p>{{confirmCtrl.visit.patient.ssn}}</p>
+                <p ng-show="editcontact"><input type="text " ng-model="confirmCtrl.visit.patient.ssn "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.ssn}}</p>
             </div>
         </div>
-        <div layout="row">
-            <div flex="33">
+        <div layout="row ">
+            <div flex="33 ">
                 <label>Address1:</label>
-                <p>{{confirmCtrl.visit.patient.address1}}</p>
+                <p ng-show="editcontact"><input type="text " ng-model="confirmCtrl.visit.patient.address1 "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.address1}}</p>
             </div>
-            <div flex="33">
+            <div flex="33 ">
                 <label>Address2:</label>
-                <p>{{confirmCtrl.visit.patient.address2}}</p>
+                <p ng-show="editcontact"><input type="text " ng-model="confirmCtrl.visit.patient.address2 "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.address2}}</p>
             </div>
         </div>
-        <div layout="row">
-            <div flex="33">
+        <div layout="row ">
+            <div flex="33 ">
                 <label>City:</label>
-                <p>{{confirmCtrl.visit.patient.city}}</p>
+                <p ng-show="editcontact"><input type="text " ng-model="confirmCtrl.visit.patient.city "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.city}}</p>
             </div>
-            <div flex="33">
+            <div flex="33 ">
                 <label>State:</label>
-                <p>{{confirmCtrl.visit.patient.state}}</p>
+                <p ng-show="editcontact"><input type="text " ng-model="confirmCtrl.visit.patient.state "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.state}}</p>
             </div>
-            <div flex="33">
+            <div flex="33 ">
                 <label>ZIP:</label>
-                <p>{{confirmCtrl.visit.patient.zip}}</p>
+                <p ng-show="editcontact"><input type="text " ng-model="confirmCtrl.visit.patient.zip "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.zip}}</p>
             </div>
         </div>
-        <div layout="row">
-            <div flex="33">
+        <div layout="row ">
+            <div flex="33 ">
                 <label>Mobile Phone:</label>
-                <p>{{confirmCtrl.visit.patient.mobilePhone}}</p>
+                <p ng-show="editcontact"><input type="text " ng-model="confirmCtrl.visit.patient.mobilePhone "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.mobilePhone}}</p>
             </div>
-            <div flex="33">
-                <label>Home Phone:</label
-                    <p>{{confirmCtrl.visit.patient.homePhone}}</p>
-                    </div>
-                <div flex="33">
-                    <label>Work Phone:</label>
-                <p>{{confirmCtrl.visit.patient.workPhone}}</p>
+            <div flex="33 ">
+                <label>Home Phone:</label>
+                <p ng-show="editcontact"><input type="text " ng-model="confirmCtrl.visit.patient.homePhone "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.homePhone}}</p>
+            </div>
+            <div flex="33 ">
+                <label>Work Phone:</label>
+                <p ng-show="editcontact"><input type="text " ng-model="confirmCtrl.visit.patient.workPhone "></p>
+                <p ng-hide="editcontact">{{confirmCtrl.visit.patient.workPhone}}</p>
             </div>
         </div>
-
-        <md-divider ng-if="!$last"></md-divider>
-        <div layout="column">
-            <label><b><u>Emergency Contact</u></b></label>
-        </div>
-        <div ng-repeat="emergencyContact in confirmCtrl.visit.patient.emergencyContacts">
+        <md-divider ng-if="!$last "></md-divider>
+        <div layout="column ">
             <div layout="row">
-                <div flex="33">
-                    <label>First Name:</label>
-                    <p>{{emergencyContact.firstName}}</p>
-                </div>
-                <div flex="33">
-                    <label>Last Name:</label>
-                    <p>{{emergencyContact.lastName}}</p>
-                </div>
-            </div>
-            <div layout="column">
-                <label>Mobile Number:</label>
-                <p>{{emergencyContact.mobilePhone}}</p>
-                <label>Relationship To Patient:</label>
-                <p>{{emergencyContact.relationship}}</p>
+                <label><b><u>Emergency Contacts</u></b></label>
+                <section layout="row" layout-sm="column" layout-align="start start " layout-wrap>
+                    <label><sm-button ng-click= "editEmergencyContact= !editEmergencyContact" class="label label-warning sm-warn">Edit</sm-button></label>
+                </section>
             </div>
         </div>
-        <md-divider ng-if="!$last"></md-divider>
-        <div layout="column">
-            <b><u>Reason for Visit</u></b>
-            <label>Symptom(s):</label>
-            <section layout="row" layout-sm="row" layout-align="left center" layout-wrap>
+        <div ng-repeat="emergencyContact in confirmCtrl.visit.patient.emergencyContacts ">
+            <div layout="row ">
+                <div flex="30 ">
+                    <label>First Name:</label>
+                    <p ng-show="editEmergencyContact"><input type="text " ng-model="emergencyContact.firstName "></p>
+                    <p ng-hide="editEmergencyContact">{{emergencyContact.firstName}}</p>
+                </div>
+                <div flex="30 ">
+                    <label>Last Name:</label>
+                    <p ng-show="editEmergencyContact"><input type="text " ng-model="emergencyContact.lastName "></p>
+                    <p ng-hide="editEmergencyContact">{{emergencyContact.lastName}}</p>
+                </div>
+                <div flex="30 ">
+                    <label>Mobile Number:</label>
+                    <p ng-show="editEmergencyContact"><input type="text " ng-model="emergencyContact.mobilePhone "></p>
+                    <p ng-hide="editEmergencyContact">{{emergencyContact.mobilePhone}}</p>
+                </div>
+                <div flex="30 ">
+                    <label>Relationship To Patient:</label>
+                    <p ng-show="editEmergencyContact"><input type="text " ng-model="emergencyContact.relationship "></p>
+                    <p ng-hide="editEmergencyContact">{{emergencyContact.relationship}}</p>
+                </div>
+            </div>
+        </div>
+        <md-divider ng-if="!$last "></md-divider>
+        <div layout="column ">
+            <div layout="row">
+                <b><u>Reason for Visit</u></b>
+                <section layout="row" layout-sm="column" layout-align="start start " layout-wrap>
+                    <label><sm-button data-toggle="modal"
+                            data-target="#myModal" class="label label-warning sm-warn">Edit</sm-button></label>
+                </section>
+            </div>
+                <label>Symptom(s):</label>
+            <section layout="row " layout-sm="row " layout-align="left center " layout-wrap>
             <span 
-                class="label label-info" style="margin-left : 2px" 
-                ng-repeat="patientSymptom in confirmCtrl.visit.patientSymptoms">{{patientSymptom.symptom.name}}
+                class="label label-info " style="margin-left : 2px " 
+                ng-repeat="patientSymptom in confirmCtrl.visit.patientSymptoms ">{{patientSymptom.symptom.name}}
             </span>
             </section>
             <p></p>
-            <label>Pain Scale:</label>
-            <p>{{confirmCtrl.visit.painScale}}</p>
+            <label>Pain Level:</label>
+            <p ng-hide="edit ">{{confirmCtrl.visit.painScale}}</p>
         </div>
-        <section layout="row" layout-sm="row" layout-align="center center" layout-wrap>
-            <md-button class="md-raised md-gray">Edit</md-button>
+        <section layout="row " layout-sm="row " layout-align="center center " layout-wrap>
+            <md-button class="md-raised md-gray " ng-click="edit=! edit ">Edit</md-button>
+            <md-button class="md-raised md-warn " ui-sref="success ">Finish Sign In</md-button>
         </section>
     </div>
+
     <md-button class="md-raised md-warn" ui-sref="success">Go to Success Page</md-button>
 
     <button class="btn btn-primary" ng-click="confirmCtrl.text()">
         test send text msg!
     </button>
+
+
+<!-- modal html -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        <p>One fine body&hellip;</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
     <pre>{{confirmCtrl | json}}</pre>
+    

@@ -26,7 +26,7 @@
 			patientFactory
 				.update(patient)
 				.then(function(patient){
-					$state.go('confirmation', {state2: [ $stateParams.state[0], patient.id, 'BADMFER!']});
+					$state.go('confirmation', {state2: [ $stateParams.state[0], patient.id]});
 					//
 				});
 		}

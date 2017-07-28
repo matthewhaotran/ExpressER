@@ -11,6 +11,8 @@
 		/* jshint validthis:true */
 		var vm = this;
 		vm.checkOutPatient = checkOutPatient;
+		vm.addNote = addNote;
+		vm.goToActivePatientsList = goToActivePatientsList;
 
 		activate();
 
@@ -34,6 +36,19 @@
 						id: visit.doctorId
 					});
 				});
+		}
+
+		function addNote (visit) {
+			visitFactory
+				.update(visit)
+				.then(function(visit) {
+					vm.visit = visit;
+					$state.reload();
+				})
+		}
+
+		function goToActivePatientsList(visit) {
+			$state.go('activePatientsList', {id: visit.doctorId});   
 		}
 
 	}
