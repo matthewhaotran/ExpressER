@@ -10,7 +10,7 @@ const db = require('../models');
 router.post('/sendMessage', (req, res) => {
     let textNumber = '+1' + req.body.patient.mobilePhone;
     const message = 
-    `You have been checked-in! Please have a seat and we will text/call your name when the doctor is ready to see you.`
+    `Hello ${req.body.patient.firstName}, you have been checked-in! Please have a seat and we will text/call your name when the doctor is ready to see you.`
     twilioClient
         .messages
         .create({
