@@ -9,10 +9,7 @@ const db = require('../models');
 
 router.post('/sendMessage', (req, res) => {
     const message = 
-    `You have been checked-in! Please 
-    have a seat and we will text/Call your name
-    when the doctor is ready to see you.
-    `
+    `You have been checked-in! Please have a seat and we will text/call your name when the doctor is ready to see you.`
     twilioClient
         .messages
         .create({
