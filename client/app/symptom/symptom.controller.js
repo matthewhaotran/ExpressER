@@ -56,8 +56,6 @@
 				.create(visit)
 				.then(function (visit) {
 					vm.visit = visit;
-
-
 					for (var i = 0; i < vm.selected.length; i++) {
 						patientSymptom = {
 							visitId: vm.visit.id,

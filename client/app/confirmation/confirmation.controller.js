@@ -10,9 +10,11 @@
 	function ConfirmationController($stateParams, $state, patientFactory, visitFactory, symptomFactory, twilioFactory) {
 		/* jshint validthis:true */
 		var vm = this;
-		vm.selected = [];
+		vm.selected = {};
 		vm.selectedSymptoms = {};
 		vm.text = text;
+		vm.symptomToDelete = [];
+		vm.symptomToAdd = [];
 
 		activate();
 
@@ -25,7 +27,7 @@
 					vm.selected = visit.patientSymptoms;
 					visit.patientSymptoms.forEach(function(ps) { 
 						vm.selectedSymptoms[ps.symptom.id] = true; 
-				console.log(vm.selected);
+						console.log(vm.selectedSymptoms);
 					});
 				});
 
@@ -33,17 +35,20 @@
 				.getAll()
 				.then(function (symptoms) {
 					vm.symptoms = symptoms;
-					console.log(symptoms);
 				});
 		}
 
 		vm.toggle = function (symptom, list) {
+			var symptomEdit={
+				visitId: vm.visit.id,
+				symptomId: symptom.id
+			}
 			var idx = list.indexOf(symptom);
 			//console.log(idx);
 			if (idx > -1) {
 				list.splice(idx, 1);
 			} else {
-				list.push(symptom);
+				list.push(symptomEdit);
 			}
 		};
 
@@ -59,7 +64,7 @@
 			twilioFactory
 				.sendText(visit)
 				.then(function () {
-					alert('Text Sent');
+					// alert('Text Sent');
 				});
 		}
 	}

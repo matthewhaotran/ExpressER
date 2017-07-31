@@ -2,7 +2,7 @@
     <div>
         <md-toolbar class="md-indigo">
             <div class="md-toolbar-tools">
-                <h1 style="text-align: center; margin-top: 1em">Confirm Information</h1>
+                <md-truncate flex>Please Confirm Information</md-truncate>
         </md-toolbar>
         </div>
     </div>
@@ -144,11 +144,9 @@
             <p ng-hide="edit ">{{confirmCtrl.visit.painScale}}</p>
         </div>
         <section layout="row " layout-sm="row " layout-align="center center " layout-wrap>
-            <md-button class="md-raised md-warn " ui-sref="success ">Finish Sign In</md-button>
+            <md-button class="md-raised md-warn " ui-sref="success" ng-click="confirmCtrl.text(confirmCtrl.visit)">Finish Sign In</md-button>
         </section>
     </div>
-
-    <md-button class="md-raised md-warn" ng-click="confirmCtrl.text(confirmCtrl.visit)" ui-sref="success">Go to Success Page</md-button>
 
 <!-- modal html -->
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -164,15 +162,16 @@
             <div flex="100" flex-gt-sm="50" layout="column">
 
                 <div>
-                    <pre>{{confirmCtrl.selected | json}}</pre>
+                    <!-- <pre>{{confirmCtrl.symptomToDelete | json}}</pre> -->
                     <fieldset class="standard">
                         <legend>Please Select Your Symptoms</legend>
                         <div layout="row" layout-wrap flex>
                             <div flex="50" ng-repeat="symptom in confirmCtrl.symptoms">
                                 <md-checkbox 
                                     ng-model="confirmCtrl.selectedSymptoms[symptom.id]"
-                                    ng-click="confirmCtrl.toggle(symptom, confirmCtrl.selected)">
-                                    {{symptom.description }}<span ng-if="confirmCtrl.selectedSymptoms[symptom.id]">selected</span>
+                                    ng-click="confirmCtrl.toggle(symptom, confirmCtrl.symptomToDelete)">
+                                    {{symptom.description }}<span ng-if="confirmCtrl.selectedSymptoms[symptom.id]"> </span>
+                                    <!-- -{{confirmCtrl.selectedSymptoms[symptom.id]}} -->
                                 </md-checkbox>
                             </div>
                         </div>
@@ -180,10 +179,11 @@
                 </div>
 
                 <div flex="100">
-                    <h2 class="md-title">Selected Symptoms</h2>
+                    <h2 class="md-title">Symptoms To Add</h2>
 
-                    <div ng-repeat="symptom in confirmCtrl.selected">
-                        {{symptom.symptom.description}}
+                    <!-- <div ng-repeat="symptom in confirmCtrl.selected"> -->
+                    <div ng-repeat="symptom in confirmCtrl.symptomToAdd">
+                        <div>{{symptom.description}}</div>
                     </div>
                 </div>
             </div>
@@ -203,12 +203,12 @@
         </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" >Save Changes</button>
+        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
       </div>
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-    <pre>{{confirmCtrl | json}}</pre>
+    <!-- <pre>{{confirmCtrl | json}}</pre> -->
     
