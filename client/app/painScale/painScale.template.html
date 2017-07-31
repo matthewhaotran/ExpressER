@@ -1,0 +1,21 @@
+<h1 style="text-align: center; margin-top: 1em">Please select your pain level</h1>
+
+<div layout="column" layout-padding ng-cloak>
+
+    <br/>
+
+<div layout style="margin-top: 5em">
+  <div flex="10" layout layout-align="center center">
+    <span class="md-body-1"><i class="fa fa-smile-o fa-2x" aria-hidden="true"></i></span>
+  </div>
+  <md-slider ng-model="painScaleCtrl.visit.painScale" flex class="md-primary" md-discrete step="1" min="1" max="10" aria-label="rating">
+  </md-slider>
+  <div flex="10" layout layout-align="center center">
+    <span class="md-body-1"><i class="fa fa-frown-o fa-2x" aria-hidden="true"></i></span>
+  </div>
+
+</div>
+
+<md-button class="md-raised md-warn" ng-click="painScaleCtrl.addPainScale(painScaleCtrl.visit)">NEXT</md-button>
+</div>
+

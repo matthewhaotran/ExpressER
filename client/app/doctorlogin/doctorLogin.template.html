@@ -1,0 +1,36 @@
+<title>Doctor Login</title>
+
+
+<body>
+
+  <md-toolbar class="md-primary" style="padding:25px">
+    <div class="md-toolbar-tools" layout-align="center center">
+      <h1 class="md-flex" style="font-size:45px">Doctor Login</h1>
+    </div>
+  </md-toolbar>
+
+  <div class="padded button" layout layout-align="center center">
+    <span>
+        <img src="/images/EspressERLogo.jpg" alt="Our Logo" style=" width:500px">
+    </span>
+  </div>
+
+  <div>
+    <div layout="row" layout-align="center center" style="padding:50px">
+      <md-input-container>
+        <md-select style="min-width: 600px" ng-model="doctor" md-on-close="clearSearchTerm()">
+          <md-select-header class="demo-select-header">
+            <input ng-model="searchTerm" type="search" placeholder="Enter by Last Name.." class="demo-header-searchbox md-text" style="min-width: 600px">
+          </md-select-header>
+          <md-optgroup label="doctors">
+          <md-option ng-value="doctor" ng-repeat="doctor in doctorLoginCtrl.doctors | orderBy: 'lastName'">{{doctor.lastName}}, {{doctor.firstName}}</md-option>
+          </md-optgroup>
+        </md-select>
+      </md-input-container>
+    </div>
+  </div>
+
+  <section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+    <md-button class="md-raised md-primary"ng-click='doctorLoginCtrl.goToIncPat(doctor)'>Select</md-button>
+  </section>
+</body>

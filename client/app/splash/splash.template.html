@@ -1,1 +1,36 @@
-<h1>This is the splash screen</h1>
+<div layout="column">
+    <p class="lead text-center">Welcome to ExpressER! Let's get started.</p>
+    <div class="padded button" layout layout-align="center center">
+        <span>
+        <img src="/images/EspressERLogo.jpg" alt="Our Logo" style="width : 400px">
+    </span>
+    </div>
+    <div class="padded button" layout layout-align="center center">
+        <span>
+            <md-button class="md-raised md-primary" ng-click='login = !login'>Existing Patient</md-button>
+        </span>
+    </div>
+    <div class="padded button" layout layout-align="center bottom">
+        <span ng-hide="login">
+            <md-button class="md-raised md-warn" ui-sref="patient">New Patient</md-button>
+        </span>
+        <span ng-show="login">
+            <md-content class="md-no-momentum">
+                <div layout="row" layout-align= "center center">
+                    <md-input-container class="md-icon-float md-block input">
+                        <label>Last Name</label>
+                        <input ng-model="patientInfoCtrl.patient.ssn" type="text">
+                    </md-input-container>
+                    <md-input-container class="md-icon-float md-block input">
+                        <label>Last 4 Digits of SSN</label>
+                        <input ng-model="patientInfoCtrl.patient.ssn" type="text">
+                     </md-input-container> 
+                     <md-button class="md-raised md-primary" ui-sref="patient">Submit</md-button>
+                     <md-button class="md-raised md-warn" ng-click="login = !login ">Cancel</md-button>   
+                </div>    
+            </md-content>
+        </span>
+    </div>
+</div>
+<!-- md-whiteframe="18" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" -->
+

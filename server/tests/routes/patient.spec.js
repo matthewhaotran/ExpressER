@@ -66,7 +66,7 @@ describe('Patients route', () => {
         newPatient.save().then(patient => {
             request(app)
                 .delete('/api/patient/' + patient.id)
-                .expect(200, done);
+                .expect(204, done);
         });
     });
 });

@@ -1,0 +1,91 @@
+<div layout="row" layout-align="center center">
+    <h1 style="text-align: center; margin-top: 1em">Enter Personal Information</h1>
+</div>
+
+<div layout="column" layout-padding ng-cloak>
+
+    <br/>
+
+    <md-content class="md-no-momentum">
+        <div layout="row">
+            <md-input-container class="md-icon-float md-block input">
+                <label>Patient First Name</label>
+                <input ng-model="patientInfoCtrl.patient.firstName" type="text" required>
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block input">
+                <label>Patient Middle Name</label>
+                <input ng-model="patientInfoCtrl.patient.middleName" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block input">
+                <label>Patient Last Name</label>
+                <input ng-model="patientInfoCtrl.patient.lastName" type="text" required>
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-input-container class="md-icon-float md-block input">
+                <label>Patient Address</label>
+                <input ng-model="patientInfoCtrl.patient.address1" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block input">
+                <label>Apt/Suite</label>
+                <input ng-model="patientInfoCtrl.patient.address2" type="text">
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-input-container class="md-icon-float md-block input">
+                <label>Patient City</label>
+                <input ng-model="patientInfoCtrl.patient.city" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block input">
+                <label>State</label>
+                <md-select ng-model="patientInfoCtrl.patient.state">
+                    <md-option><em>None</em></md-option>
+                    <md-option ng-repeat="state in patientInfoCtrl.states" ng-value="state.abbrev">
+                    {{state.abbrev}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block input">
+                <label>Patient Zip</label>
+                <input ng-model="patientInfoCtrl.patient.zip" type="text">
+            </md-input-container>
+        </div>
+        <div layout="row">
+            <md-input-container class="md-icon-float md-block input">
+                <label>Mobile Phone Number</label>
+                <input ng-model="patientInfoCtrl.patient.mobilePhone" type="number" pattern=".{10,10}" placeholder="##########"required>
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block input">
+                <label>Home Phone Number</label>
+                <input ng-model="patientInfoCtrl.patient.homePhone" type="text">
+            </md-input-container>
+            <md-input-container class="md-icon-float md-block input">
+                <label>Work Phone Number</label>
+                <input ng-model="patientInfoCtrl.patient.workPhone" type="text">
+            </md-input-container>
+        </div>
+        <div layout ="row">
+        <md-input-container class="md-icon-float md-block input">
+            <label>Patient Date Of Birth</label>
+            <input ng-model="patientInfoCtrl.patient.dob" type="date">
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block input">
+            <label>Social Security Number</label>
+            <input ng-model="patientInfoCtrl.patient.ssn" type="text">
+        </md-input-container>
+        </div>
+    <div layout ="row">
+        <md-input-container class="md-icon-float md-block input">
+            <label>Insurance Company</label>
+            <input ng-model="patientInfoCtrl.insurance.companyName" type="text">
+        </md-input-container>
+        <md-input-container class="md-icon-float md-block input">
+            <label>Policy Number</label>
+            <input ng-model="patientInfoCtrl.insurance.insuranceNumber" type="text">
+        </md-input-container>
+        </div>
+    </md-content>
+
+    <md-button class="md-raised md-warn" ng-click="patientInfoCtrl.save(patientInfoCtrl.patient, patientInfoCtrl.insurance)">NEXT</md-button>
+
+

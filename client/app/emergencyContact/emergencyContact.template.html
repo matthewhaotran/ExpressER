@@ -1,0 +1,68 @@
+<div layout="row" layout-align="center center">
+    <h1 style="text-align: center; margin-top: 1em">Enter Your Emergency Contacts</h1>
+</div>
+
+<div layout="column" layout-padding ng-cloak>
+
+    <br/>
+
+    <div class="pre-scrollable">
+
+        <md-content class="md-no-momentum">
+
+            <md-input-container class="md-icon-float md-block">
+                <label>Contact First Name</label>
+                <md-icon class="name"></md-icon>
+                <input ng-model="emergencyContactCtrl.contact.firstName" type="text">
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-block">
+                <label>Contact Last Name</label>
+                <md-icon class="name"></md-icon>
+                <input ng-model="emergencyContactCtrl.contact.lastName" type="text">
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-block">
+                <label>Contact Phone Number</label>
+                <md-icon class="name"></md-icon>
+                <input ng-model="emergencyContactCtrl.contact.mobilePhone" type="text">
+            </md-input-container>
+
+            <md-input-container class="md-icon-float md-block">
+                <label>Relationship to Contact</label>
+                <md-icon class="name"></md-icon>
+                <input ng-model="emergencyContactCtrl.contact.relationship" type="text">
+            </md-input-container>
+
+        </md-content>
+
+        <hr>
+
+        <md-button class="md-raised md-warn text-center" ng-click="emergencyContactCtrl.createEmergencyContact(emergencyContactCtrl.contact)">Add Contact</md-button>
+
+        <div class='container'>
+
+            <div class="row col-sm-4" style='margin-right: 10px;' ng-repeat="emergencyContact in emergencyContactCtrl.emergencyContacts">
+                
+                    <!-- <p><strong>Name:</strong> {{emergencyContact.firstName}} {{emergencyContact.lastName}}</p>
+            <p><strong>Phone:</strong> {{emergencyContact.mobilePhone}}</p>
+            <p><strong>Relationship:</strong> {{emergencyContact.relationship}}</p> -->
+                    <md-card md-theme="{{ showDarkTheme ? 'dark-purple' : 'default' }}" md-theme-watch>
+                        <md-card-title>
+                            <md-card-title-text>
+                                <span class="md-headline"><p><strong>Name:</strong> {{emergencyContact.firstName}} {{emergencyContact.lastName}}</p></span>
+                                <span class="md-subhead"><p><strong>Phone:</strong> {{emergencyContact.mobilePhone}}</p></span>
+                                <span class='md-subhead'><p><strong>Relationship:</strong> {{emergencyContact.relationship}}</p></span>
+                            </md-card-title-text>
+                            <!-- <md-card-title-media>
+                                <div><img src="/images/EspressERLogo.jpg" alt="Our Logo" style=" width:150px"></div>
+                            </md-card-title-media> -->
+                        </md-card-title>
+                
+            </div>
+        </div>
+    </div>
+
+    <md-button class="md-raised md-warn" ng-click="emergencyContactCtrl.goToSymptom(contact)">NEXT</md-button>
+
+</div>

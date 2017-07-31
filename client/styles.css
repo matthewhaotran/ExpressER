@@ -1,0 +1,27 @@
+body {
+  padding-top: 2em;
+}
+.button {
+  margin-top: 2em;
+  /* text-align: center; */
+}
+
+.input {
+  margin: 1em 1em;
+}
+
+.pre-scrollable {
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+.sm-warn { 
+  margin-left: 10px;
+
+#symptomglancebox {
+  height: 299px;
+}
+
+.Card {
+  background-color:lightgrey;
+}

@@ -1,19 +1,19 @@
 (function() {
-    'use strict';
+	'use strict';
 
-    angular
-        .module('app.splash')
-        .controller('SplashController', SplashController);
+	angular
+		.module('app.splash')
+		.controller('SplashController', SplashController);
 
-    SplashController.$inject = ['$stateParams','$state'];
-    function SplashController($stateParams,$state) {
-        var vm = this;
+	SplashController.$inject = ['$stateParams','$state'];
+	function SplashController($stateParams,$state) {
+		var vm = this;
         
 
-        activate();
+		activate();
 
-        ////////////////
+		////////////////
 
-        function activate() { }
-    }
+		function activate() { }
+	}
 })();

@@ -1,0 +1,32 @@
+
+        <div layout="column" layout-padding ng-cloak>
+
+            <div flex="100" flex-gt-sm="50" layout="column">
+
+                <div>
+                    <fieldset class="standard">
+                        <h1 style="text-align: center; margin-bottom: 1em"><center>Select Your Symptoms</center></h1>
+                        <div layout="row" layout-wrap flex>
+                            <div flex="50" ng-repeat="symptom in symptomCtrl.symptoms">
+                                <md-checkbox ng-checked="symptomCtrl.exists( symptom,symptomCtrl.selected)" ng-click="symptomCtrl.toggle( symptom,symptomCtrl.selected)">
+                                    {{ symptom.description }} <span ng-if="symptomCtrl.exists(symptom.description, symptomCtrl.selected)">selected</span>
+                                </md-checkbox>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div flex="100">
+                    <h2 class="md-title">Selected Symptoms</h2>
+
+                    <div class="md-display-1 md-raised md-primary" md-button class="md-raised md-primary" ng-repeat="symptom in symptomCtrl.selected">
+                        {{symptom.description}}
+                    </div>
+                </div>
+
+                <md-button class="md-raised md-warn" ng-click="symptomCtrl.createSymptom(symptomCtrl.visit,symptomCtrl.patientSymptom)">NEXT</md-button>
+
+            </div>
+        </div>
+
+
