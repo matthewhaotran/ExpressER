@@ -1,7 +1,7 @@
 {
 	"name": "ExpressER",
 	"scripts": {
-		"start": "node server.js",
+		"start": "node index.js",
 		"test": "cross-env NODE_ENV=test mocha ./server/**/*.spec.js",
 		"postinstall": "gulp build"
 	},
@@ -37,9 +37,5 @@
 		"supertest": "^3.0.0",
 		"sweetalert2": "^6.6.6",
 		"twilio": "^3.5.0"
-	},
-	"version": "1.0.0",
-	"main": "index.js",
-	"repository": "https://github.com/OriginExpressER/ExpressER.git",
-	"license": "MIT"
+	}
 }
