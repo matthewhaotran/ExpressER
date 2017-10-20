@@ -74,4 +74,6 @@ gulp.task('serve', () =>
   })
 );
 
-gulp.task('default', ['copy:fonts', 'copy:images', 'copy:html', 'build:js', 'build:css', 'watch', 'serve']);
+gulp.task('build', ['copy:fonts', 'copy:images', 'copy:html', 'build:js', 'build:css'])
+
+gulp.task('default', ['build', 'watch', 'serve']);
