@@ -24,5 +24,5 @@
     "host": "165.227.1.186",
     "dialect": "mysql",
     "logging": false
-  },
+  }
 }
