@@ -18,6 +18,11 @@
   },
 
   "production": {
-    "useEnvVariables": true
-  }
+    "username": "expresser",
+    "password": "0G61Si@koIKjd03U",
+    "database": "expresser_production",
+    "host": "165.227.1.186",
+    "dialect": "mysql",
+    "logging": false
+  },
 }
