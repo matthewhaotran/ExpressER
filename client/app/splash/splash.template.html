@@ -21,8 +21,8 @@
     <p class="lead text-center">Welcome to ExpressER! Let's get started.</p>
     <div class="padded button" layout layout-align="center center">
         <span>
-        <img src="/images/EspressERLogo.jpg" alt="Our Logo" style="width : 400px">
-    </span>
+            <img src="/images/EspressERLogo.jpg" alt="Our Logo" style="width : 400px">
+        </span>
     </div>
     <div class="padded button" layout layout-align="center center">
         <span>
@@ -35,7 +35,7 @@
         </span>
         <span ng-show="login">
             <md-content class="md-no-momentum">
-                <div layout="row" layout-align= "center center">
+                <div layout="row" layout-align="center center">
                     <md-input-container class="md-icon-float md-block input">
                         <label>Last Name</label>
                         <input ng-model="patientInfoCtrl.patient.ssn" type="text">
@@ -43,13 +43,27 @@
                     <md-input-container class="md-icon-float md-block input">
                         <label>Last 4 Digits of SSN</label>
                         <input ng-model="patientInfoCtrl.patient.ssn" type="text">
-                     </md-input-container> 
-                     <md-button class="md-raised md-primary" ui-sref="patient">Submit</md-button>
-                     <md-button class="md-raised md-warn" ng-click="login = !login ">Cancel</md-button>   
-                </div>    
+                    </md-input-container>
+                    <md-button class="md-raised md-primary" ui-sref="patient">Submit</md-button>
+                    <md-button class="md-raised md-warn" ng-click="login = !login ">Cancel</md-button>
+                </div>
             </md-content>
         </span>
     </div>
 </div>
-<!-- md-whiteframe="18" flex-sm="45" flex-gt-sm="35" flex-gt-md="25" -->
+<!-- Trigger/Open The Modal -->
+<button id="myBtn">Open Modal</button>
 
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3 class="text-center">This is a <strong>demo</strong> application. Patients arriving at an emergency room will use this application from a tablet and check
+            themselves in without talking to a receptionist.</h3>
+            <br>
+            <h2 class="text-center"><strong>To demo, please click on New Patient and follow the prompt</strong></h2>
+    </div>
+
+</div>
