@@ -27,6 +27,7 @@ gulp.task('build:js', () =>
   .src([
     'node_modules/jquery/dist/jquery.js',
     'node_modules/bootstrap/dist/js/bootstrap.js',
+    'node_modules/bootstrap/js/modal.js',
     'node_modules/angular/angular.js',
     'node_modules/angular-aria/angular-aria.js',
     'node_modules/angular-animate/angular-animate.js',
