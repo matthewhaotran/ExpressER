@@ -6,23 +6,40 @@
                 <div>
                     <fieldset class="standard">
                         <h1 style="text-align: center; margin-bottom: 1em"><center>Select Your Symptoms</center></h1>
-                        <div layout="row" layout-wrap flex>
-                            <div flex="50" ng-repeat="symptom in symptomCtrl.symptoms">
-                                <md-checkbox ng-checked="symptomCtrl.exists( symptom,symptomCtrl.selected)" ng-click="symptomCtrl.toggle( symptom,symptomCtrl.selected)">
-                                    {{ symptom.description }} <span ng-if="symptomCtrl.exists(symptom.description, symptomCtrl.selected)">selected</span>
+                        <div layout="row" layout-wrap flex center>
+                            <div flex="300">
+                                <md-checkbox>
+                                     Cough
                                 </md-checkbox>
+                                <md-checkbox>
+                                    Fever
+                               </md-checkbox>
+                               <md-checkbox>
+                                Headache
+                            </md-checkbox>
+                            <md-checkbox>
+                                Nausea
+                            </md-checkbox>
+                            <md-checkbox>
+                                Chest Pain
+                            </md-checkbox>
+                            <md-checkbox>
+                                Body Ache
+                            </md-checkbox>
+                            <md-checkbox>
+                                Diffuculty Breathing
+                            </md-checkbox>
+                            <md-checkbox>
+                                Burns
+                            </md-checkbox>
+                            <md-checkbox>
+                                Slurred Speech
+                            </md-checkbox>
                             </div>
                         </div>
                     </fieldset>
                 </div>
 
-                <div flex="100">
-                    <h2 class="md-title">Selected Symptoms</h2>
-
-                    <div class="md-display-1 md-raised md-primary" md-button class="md-raised md-primary" ng-repeat="symptom in symptomCtrl.selected">
-                        {{symptom.description}}
-                    </div>
-                </div>
 
                 <md-button class="md-raised md-warn" href="/#!/painScale">NEXT</md-button>
 
